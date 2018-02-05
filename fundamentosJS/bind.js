@@ -30,6 +30,9 @@ function vehiculo(tipo, marca){
   console.log(`Yo tengo un ${tipo} de marca ${marca}.`);
 }
 
+El primer parameto en bind es a quien va a hacer referencia el this,
+y los demas son los parametros de la funcion.
+
 const moto = vehiculo.bind(null, 'Moto');
 moto('Kawasaky');
 */
