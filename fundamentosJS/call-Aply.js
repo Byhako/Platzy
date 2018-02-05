@@ -18,3 +18,8 @@ saludar.call(persona, 3, true);
 
 console.log('\nUsamos metodo apply:\n');
 saludar.apply(persona, [3, true]);
+
+/*
+parametros = [3, false];
+saludar.call(persona, ...parametros);
+*/

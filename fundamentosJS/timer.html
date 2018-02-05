@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Set Interval</title>
+</head>
+<body>
+  <h1 id="tiempo">Tiempo: 0 segundos.</h1>
+  <button id="stop">Stop</button>
+  <button id="seguir">Iniciar</button>
+
+  <script>
+    // que voy a hacer, cada cuanto tiempo
+    const $timer = document.getElementById('tiempo');
+    const $stop = document.getElementById('stop');
+    const $continuar = document.getElementById('seguir');
+    // signo $ para indicar que es un elemento del dom.
+
+    let contador = 1;
+    let tex1 = `Tiempo: ${contador} segundo.`;
+
+    $stop.addEventListener('click', ()=>{
+      clearInterval(intervalo)
+      $continuar.textContent = 'Continuar';
+    });
+    
+    $continuar.addEventListener('click', ()=>{
+      intervalo = setInterval(()=>{
+      let tex2 = `Tiempo: ${contador} segundos.`;
+      $timer.textContent = contador==1? tex1 : tex2;
+      contador += 1;
+    },1000);
+    })
+</script>
+
+</body>
+</html>
