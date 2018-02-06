@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Promesas</title>
+</head>
+
+<body>
+  <h1 id="agenda">Estoy despertando</h1>
+  <script>
+    const DESPERTAR = 3000;
+    const DUCHA = 2000;
+    const VESTIRSE = 2000;
+    const DESAYUNAR = 3000;
+    const PLATZI = 5000;
+    const $agenda = document.getElementById('agenda');
+
+
+    // const despertar = new Promise((todo está ok, todo está mal)=>{
+
+    // })
+    // const despertar = new Promise((resolve, reject)=>{
+    //   setTimeout(() => {
+    //     // resolve('Ahora me estoy duchando...')
+    //     reject('todo mal lo siento, estoy enfermo')
+    //   }, DESPERTAR)
+    // })
+
+    // // despertar.then(que quiero hacer si todo está ok)
+    // despertar
+    // .then((message)=> {
+    //   console.log(message)
+    // })
+    // // despertar.catch(que quiero hacer si todo está mal)
+    // .catch((message)=> {
+    //   console.log(message)
+    // })
+
+
+    function despertar() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('Ahora me estoy duchando...')
+        }, DESPERTAR)
+      });
+    }
+
+    function ducha(message) {
+      $agenda.textContent = message;
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('Me estoy vistiendo...')
+        }, DUCHA)
+      });
+    }
+
+    function vestirme(message) {
+      $agenda.textContent = message;
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject('no hay comida');
+
+          // resolve('Ahora estoy desayunando')
+        }, VESTIRSE)
+      });
+    }
+
+    function desayunar(message) {
+      $agenda.textContent = message;
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // reject('no hay comida');
+          resolve('Estoy estudiando')
+        }, DESAYUNAR)
+      });
+    }
+
+    function error(message) {
+      $agenda.style.color = 'red';
+      $agenda.textContent = message;
+
+    }
+
+    despertar()
+      .then(ducha)
+      .then(vestirme)
+      .then(desayunar)
+      .catch(error)
+  </script>
+</body>
+
+</html>

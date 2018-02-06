@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Callbacks</title>
+    </head>
+    <body>
+      <h1 id="agenda">Estoy despertando</h1>
+        <script>
+            const DESPERTAR = 3000;
+                const DUCHA = 2000;
+                    const VESTIRSE = 2000;
+                        const DESAYUNAR = 3000;
+                            const PLATZI = 5000;
+                                const $agenda = 
+                                document.getElementById('agenda');
+                                    setTimeout(()=> {
+                                          $agenda.textContent = 'Ahora me estoy 
+                                          duchando...';
+                                                setTimeout(()=> {
+                                                        $agenda.textContent = 
+                                                        'Me estoy vistiendo...';
+                                                                setTimeout(() => 
+                                                                {
+                                                                          $agenda.textContent = 'Ahora estoy desayunando...';
+                                                                                    setTimeout(()=> {
+                                                                                                $agenda.textContent = 'Que lindo es estudiar en Platzi...';
+                                                                                                            setTimeout(()=> {
+                                                                                                                          $agenda.textContent = 'Y javascript es mi lenguaje favorito <3';
+                                                                                                                                      }, PLATZI)
+                                                                                                                                                }, DESAYUNAR)
+                                                                                                                                                        }, VESTIRSE);
+                                                                                                                                                              }, DUCHA)
+                                                                                                                                                                  }, DESPERTAR)
+                                                                                                                                                                    </script>
+                                                                                                                                                                    </body>
+                                                                                                                                                                    </html>
