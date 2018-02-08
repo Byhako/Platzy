@@ -1,0 +1,97 @@
+## Claves.
+
++ ¿Que pasa si las cosas salen mal?
++ ¿Que pasa si los fundadores ya no quiueren trabajar juntos?
++ Dejar claras las espectaivas. Se quiere desarrollar un sueño o se desea crear un empresa para venderla.
++ ¿Como se divide la empresa ante un conflicto?
+
+## Estrategia de precios.
+
++ Percepción del valor
++ Conocer el cliente.
++ Costos de producción del producto.
++ Conocer la competencia.
++ Conocer el mercado de mis productos.
++ ¿Cuanto el mercado está dispuesto a pagar?
++ ¿qué tanto volumen del producto se puede crear?
++ Probar la sencibilidad del producto.
++ Como perciben los usuarios el precio.
+
+## Crowdfunding.
+
++ Alternativa de financiación.
++ *Aceleradoras o angeles inversionistas.*
++ Se necesita un modelo ne negocio validado, que se tenga mercado.
++ Buscar financiación entre la comunidad en general.
++ Donaciones, recompensas, inversión, prestamo..
+
+### Inversión
+
++ [Crowdfunder](http://www.crowdfunder.com)
+
+### Prestamos
+
++ LendingClub.
+
+### Donaciones
+
++ gofundme. Principalmente para causas sociales.
+
+### Recompensa
+
++ kick starter.
++ indiegog.
+
+## Metricas.
+
+### Metricas de vida o muerte.
+
++ Burn rate  (Dinero quemado)
++ Expenses   (Dinero gastado)
++ Customer Acquisition Cost (Costo por adquirir cada cliente)
+
+### Metricas de crecimiento.
+
++ Revenue (Ingresos)
++ Monthly recurring revenue  (Ingreso recurrente mensual)
++ Run rate 
++ Runway 
++ Usuarios  (Cuantos usuarios tenemos)
+
+### Metricas de performance
+
++ KPI (Rendimiento del equipo)
++ OKR (Crecimiento por individuo)
+
+## Comunicación activa con los equipos de trbajo.
++ Se debe definir la cultura de la empresa.
++ Tener una seccion de retroalimentacion por parte de los usuarios.
+
+## Más Claves.
+
++ ¿Como escuchar?  Accesible, rápido y eficiente, lógico, humano.
++ Enseñar al equipo a resolver problemas, no a usar herramientas.
++ Comunicar.  Soluciones viables. Procesos de planeación.
++ Bajo esfuerzo, alto impacto.
+
+## Presentaciones.
+
++ Para leer, para informar o para explicar.
++ Una idea por diapositiva.
++ Solicita una accion de repuesta a la audiencia.
++ Tu logo en todas partes.
++ Todas las diapoitivas debe servir como la primer diapositiva.
++ No acultar los problemas graves. Sacar las cosas malas de la cabeza de la audiencia.
++ Demostrar crecimiento, que demuestre exito.
++ Aprovecha para enseñar algo, pequeño, pero que quede en la mente de las personas.
++ Vende un sueño, que tan grande o increible sera tu producto para ellos.
++ Reitera lo mas importante, lo mas impactante.
+
+## Cap Table
+
++ La división de los fundadores debe ser lo mas equitativamente posible.
++ vesting de opciones.
++ Acciones con poder de voto, y otras solo con poder financiero.
++ Tener presentes eventos de liquidez.
++ hacer optiones pool,  acciones para dar entre los primeros empleados.
++ 
