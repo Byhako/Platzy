@@ -57,3 +57,35 @@ https://reactjs.org/docs/handling-events.html
 
 + Si ocurre alun error al renderizar el componente este metodo es invocado. El manejo de errores solo ocurre en componentes hijos.
 
+-----------------------------------------------------------
+
+**PureComponent:** tiene el método shouldComponentUpdate ya asignado (por defecto), si a este componente no se le actualizan las propiedades, no tenemos que validar a mano con shouldComponentUpdate, PureComponent lo hace por nosotros, es decir; si recibe nuevas propiedades pero son las que ya teniamos, no se re-renderiza.
+
+dump component -> (tonto) como se ve el componente.
+smart component -> (listo) Que hace mi componente.
+
+**Como se ve. Dumb Component. Presentational Component**
+
++ Puede contener smart componentes u otros componentes presentacionales.
++ Permite composición {props.children}
++ Son independientes del resto de la aplicación.
++ No especifica como se cargan los datos. Eg. this.props.title
++ Recibe datos y callbacks mediante propiedades.
++ Generalmente no tienen su propio estado, es raro que tenga un ciclo de vida.
++ Se escriben como componentes funcionales al menos que necesiten mejoras de performance (PureComponents)
+
+**Que hace. Smart. Container Component**
+
++ Se centra en como funciona la app. Tienen ciclo de vida y states. Controlan como funciona la aplicación.
++ Contiene componentes de UI y otros smart.
++ No tienen estilos.
++ Proveen datos y callbacks a otros componentes (UI o smart)
++ Normalmente tienen estado.
++ Llaman a acciones
++ Se pueden generar por higher order components
+
+**¿Por qué dividir los componentes en smart y dumbs?**
+
++ Separación de responsabilidades (Se parece a MVC, V para dumbs y C para smarts)
++ Mejorar la capacidad de reutilizar componentes
+
