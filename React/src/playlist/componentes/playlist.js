@@ -2,28 +2,28 @@ import React from 'react';
 import Media from './media';
 import './playlist.css';
 import Play from '../../icons/componentes/play';
+import Pause from '../../icons/componentes/pause';
+import Volume from '../../icons/componentes/volume';
+import Full from '../../icons/componentes/fullScreen';
 
 // Componente funcional.  No tiene ciclo de vida
 function Playlist (props) {
-  // importo datos
-  //const playlist = props.data.categories[0].playlist;
-  const categorias = props.data.categories;
-  const playlist = categorias[0].playlist
-  
-  //categorias.length
-  const lista = [0,1,2]
   return(
     <div className='Playlist'>
-      <Play
-        size = {50}
-        color = "red"
-      />
+      {console.log(props.title)}
+      <h2>{props.description}</h2>
+      <h1>{props.title}</h1>
+      <Play size = {30} color = "black" />
+      <Pause size = {30} color = "red" />
+      <Volume size = {30} color = "green" />
+      <Full size = {30} color = "blue" />
+      <br/>
       {
-        playlist.map((item)=>{
-          //return <Media title={item.title} key={item.id} image={item.cover}/>
-          return <Media {...item} key={item.id}/>            
+        props.playlist.map((item)=>{
+          return <Media {...item} key={item.id}/>
         })
       }
+      <br/>
     </div>
   )
 }

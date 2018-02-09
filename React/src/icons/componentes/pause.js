@@ -1,16 +1,16 @@
 import React from 'react';
 import Icon from './icon'
 
-function Play(props){
+function Pause(props){
   return(
     <Icon {...props}>
     {/* lo que esta aqui es el children de icon*/}
       <svg>
-        <path d="M6 4l20 12-20 12z"></path>
+        <path d="M4 4h10v24h-10zM18 4h10v24h-10z"></path>
       </svg>
     </Icon>
   )
 }
 
 
-export default Play;
+export default Pause;

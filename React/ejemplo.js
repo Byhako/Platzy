@@ -6,3 +6,5 @@ a.map((fila)=>{
     console.log(item)
   })
 })
+
+let z = a.map((x)=>{return x})
