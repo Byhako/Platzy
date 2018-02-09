@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './media.css'
 
-class Media extends Component{
+
+// Componente puro
+class Media extends PureComponent{
   /*// convencion para Es6
     constructor(props){
     super(props);
@@ -35,8 +37,8 @@ class Media extends Component{
     return(
       <div className='Media' onClick={ this.handleClick } >
         <div className='Media-cover'>
-          <img className='.Media-image'
-           src={this.props.image}
+          <img className='Media-image'
+           src={this.props.cover}
            width={260}
            height={160}
           />
@@ -52,13 +54,14 @@ class Media extends Component{
 // Pille que propTypes comienza aqui con minuscula pero dentro si con mayuscula
 Media.propTypes = {
   title: PropTypes.string,
-  author: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  cover: PropTypes.string.isRequired,
   type: PropTypes.oneOf( ['video', 'audio'] ),  // validando texto
 }
 
 Media.defaultProps = {
   title: 'Default title',
+  author: 'Leonidas'
 }
 
 export default Media;

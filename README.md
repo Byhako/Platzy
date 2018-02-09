@@ -1,6 +1,6 @@
 # Platzy
 <br/>
-**<h2>Cursos de platzy</h2>**
+## **Cursos de platzy**
 
 + Programación básica.
 + Fundamentos de JavaScript
