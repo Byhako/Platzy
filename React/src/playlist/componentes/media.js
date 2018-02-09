@@ -57,4 +57,8 @@ Media.propTypes = {
   type: PropTypes.oneOf( ['video', 'audio'] ),  // validando texto
 }
 
+Media.defaultProps = {
+  title: 'Default title',
+}
+
 export default Media;
