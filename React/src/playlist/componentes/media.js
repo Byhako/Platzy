@@ -20,22 +20,13 @@ class Media extends PureComponent{
   // Con Es7 podemos usar solo arrow function, pues estas heredan
   // el contexto de su padre
 
-  handleClick = (evento)=>{
-   // Vamos a cambiar el estado
-    if(this.state.author==this.props.author){
-      this.setState({author: 'Selene',})
-    }else{
-      this.setState({author: this.props.author,})
-    }
-  }
-
   state = {
     author: this.props.author,
   }
 
   render(){
     return(
-      <div className='Media' onClick={ this.handleClick } >
+      <div className='Media' onClick={ this.props.handleClick } >
         <div className='Media-cover'>
           <img className='Media-image'
            src={this.props.cover}

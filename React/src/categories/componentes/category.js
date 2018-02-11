@@ -1,12 +1,14 @@
 import React from 'react';
 import Playlist from '../../playlist/componentes/playlist'
+import './category.css';
 
 function Category(props){
   return(
-    <div>
-      <p>{props.description}</p>
-      <h2>{props.title}</h2>
+    <div className="Category">
+      <p className="Category-description">{props.description}</p>
+      <h2 className="Category-title">{props.title}</h2>
       <Playlist 
+        handleOpenModal={props.handleOpenModal}
         playlist = {props.playlist}
       />
     </div>
