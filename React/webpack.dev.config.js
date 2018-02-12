@@ -11,6 +11,7 @@ module.exports = {
   devServer: {
     port: 8080,
   },
+  devtool:'eval-source-map',
   module: {
     rules: [{
         // test: que tipo de archivo quiero reconocer,

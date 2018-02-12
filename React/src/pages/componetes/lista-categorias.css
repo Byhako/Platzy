@@ -1,0 +1,12 @@
+.ListaCategorias{
+  margin-left: 5px;
+}
+
+.ListaCategorias-title{
+  color: #aeedf9;
+}
+
+.ListaCategorias-author{
+  margin-top: -20px;
+  color:gray;
+}

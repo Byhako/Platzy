@@ -41,7 +41,7 @@ https://reactjs.org/docs/handling-events.html
 
 + re-render
 
-### componentWillUpdate
+### componentDidUpdate
 
 + Metodo llamado luego de re-renderizar.
 
@@ -88,4 +88,5 @@ smart component -> (listo) Que hace mi componente.
 
 + Separación de responsabilidades (Se parece a MVC, V para dumbs y C para smarts)
 + Mejorar la capacidad de reutilizar componentes
+
 

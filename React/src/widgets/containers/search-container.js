@@ -3,7 +3,7 @@ import Search from '../componentes/search';
 
 class SearchContainer extends Component{
   state = {
-    value: 'Selene'
+    value: null
   }
   
   handleSubmit = event =>{

@@ -5,15 +5,17 @@ import Related from '../componetes/related';
 import ModalContainer from '../../widgets/containers/modal-container';
 import Modal from '../../widgets/componentes/modal';
 import HandleError from '../../error/containers/handle-error';
+import VideoPlayer from '../../player/container/video-players';
 
 class Home extends Component {
   state = {      //constructor
     modalVisible: false,
   }
   
-  handleOpenModal = ()=>{
+  handleOpenModal = (media)=>{
     this.setState({
       modalVisible: true,
+      media: media,
     })
   }
 
@@ -27,7 +29,11 @@ class Home extends Component {
     return (
       <HandleError>
         <HomeLayout>
-          <Related/>
+          <Related
+            categories={this.props.data.categories}
+            handleOpenModal={this.handleOpenModal}
+          />
+          
           <Categories
             categories={this.props.data.categories}
             handleOpenModal={this.handleOpenModal}
@@ -36,7 +42,11 @@ class Home extends Component {
             this.state.modalVisible &&  /*si se cumple, renderiza*/
             <ModalContainer>
               <Modal handleClick={this.handleCloseModal}>
-                <h2>MODAL</h2>
+                <VideoPlayer
+                  autoplay /*llega true como propiedad*/
+                  src={this.state.media.src}
+                  title={this.state.media.title}
+                />
               </Modal>
             </ModalContainer>
           }
