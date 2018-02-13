@@ -1,0 +1,14 @@
+.Lista{
+  border-bottom: 1px dashed;
+  margin-bottom: 10px;
+  cursor: pointer;
+  
+}
+
+.Lista p {
+  margin-top: -10px;
+}
+
+.author{
+  color:#5483af;
+}
