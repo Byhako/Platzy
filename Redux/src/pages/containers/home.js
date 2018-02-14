@@ -6,6 +6,7 @@ import ModalContainer from '../../widgets/containers/modal-container';
 import Modal from '../../widgets/componentes/modal';
 import HandleError from '../../error/containers/handle-error';
 import VideoPlayer from '../../player/container/video-players';
+import { connect } from 'react-redux';
 
 class Home extends Component {
   state = {      //constructor
@@ -30,12 +31,12 @@ class Home extends Component {
       <HandleError>
         <HomeLayout>
           <Related
-            categories={this.props.data.categories}
+            categories={this.props.categories}
             handleOpenModal={this.handleOpenModal}
           />
           
           <Categories
-            categories={this.props.data.categories}
+            categories={this.props.categories}
             handleOpenModal={this.handleOpenModal}
           />
           {
@@ -56,4 +57,14 @@ class Home extends Component {
   }
 }
 
-export default Home;
+function mapStateToProps(state, props){
+  // datos que envio a Home como propiedades
+  return{
+    categories: state.data.categories
+  }
+}
+
+// connect recibe un parametro que especifica que datos necesitamos
+// y esos datos se obtienen desde el state
+// connect(funcion que parsea datos)(componente)
+export default connect(mapStateToProps)(Home);
