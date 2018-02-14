@@ -3,12 +3,12 @@ import Search from '../componentes/search';
 
 class SearchContainer extends Component{
   state = {
-    value: null
+    value: 'busca'
   }
   
   handleSubmit = event =>{
     event.preventDefault(); // para evitar que recargue.
-    console.log(this.input.value)
+    console.log(this.input.value, 'submit')
   }
 
   setInputRef = elemento =>{
