@@ -5,6 +5,11 @@
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/invie.css"/>
+    
+
+    <meta name='viewport' content="width=device-width, initial-scale=1", user-scalable=no>
+    
+
     <!-- <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css"/> -->
   </head>
   <body>
@@ -13,7 +18,10 @@
         <figure class="logotipo"> <!-- logotipo -->
           <img src="images/invie.png" width="186" height="60" alt="Invie logotipo"/>
         </figure>
-        <nav class="menu"> <!-- menu -->
+  
+        <span class="burguer-button icon-menu" id="burguer-button"></span>
+
+        <nav class="menu" id="menu"> <!-- menu -->
           <ul>
             <li>
               <a href="index.html">Home</a>
@@ -102,5 +110,19 @@
         </form>
       </div>
     </footer>
+
+    <script>
+      var $button = document.getElementById('burguer-button');
+      var $menu = document.getElementById('menu');
+
+
+      $button.addEventListener('touchstart', toggleMenu);
+
+      function toggleMenu(){
+        $menu.classList.toggle('activate')
+      };
+
+    </script>
+
   </body>
 </html>
