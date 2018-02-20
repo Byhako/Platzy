@@ -115,13 +115,23 @@
       var $button = document.getElementById('burguer-button');
       var $menu = document.getElementById('menu');
 
-
-      $button.addEventListener('touchstart', toggleMenu);
-
       function toggleMenu(){
         $menu.classList.toggle('activate')
-      };
+      }
 
+      // Media querys desde js
+      var consulta = window.matchMedia('(max-width:540px)');
+      consulta.addListener(mediaQuery);
+
+      function mediaQuery(){
+        if(consulta.matches){
+          $button.addEventListener('touchstart', toggleMenu);
+        }else {
+          $button.removeEventListener('touchstart', toggleMenu);
+        }
+      }
+
+      mediaQuery();
     </script>
 
   </body>
