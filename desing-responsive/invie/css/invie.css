@@ -485,3 +485,18 @@ input:focus, textarea:focus {
   }
 
 }
+
+.video-src {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  position: relative;
+  padding-top: 56.25%;  /*proporcion 16/9*/
+}
