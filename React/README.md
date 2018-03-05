@@ -21,11 +21,11 @@ https://reactjs.org/docs/handling-events.html
 
 ### componentDidMount
 
-+ Metodo llamado luego de que el componente este montado. Solo se lanza una vex, se enlazan eventos.
++ Metodo llamado luego de que el componente este montado. Solo se lanza una ves, se enlazan eventos.
 
 ## Actualizacion.
 
-### componentWillRecieveProps
+### componentWillReceiveProps
 
 + Metodo llamado al recibir nuevas propiedades. Sirve para actualizar el estado con base a las nuevas propiedades.
 
@@ -45,7 +45,7 @@ https://reactjs.org/docs/handling-events.html
 
 + Metodo llamado luego de re-renderizar.
 
-## Demontado
+## Desmontado
 
 ### componentWillUnmount
 
