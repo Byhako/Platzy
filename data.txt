@@ -1,0 +1,13 @@
+Conceptos básicos:
+
++ Redundancia: Datos duplicados o multiples archivos.
++ Concurrencia: Muchas personas accediendo al mismo archivo o dato.
++ Aislamiento: Realizar operaciones independientes entre cada uno de multiples archivos o datos.
++ Integridad: Restricciones en los valores al definir si estos son obligatorios, opcionales o si cumplen ciertas condiciones.
++ Inconsistencia: Duplicación de información, datos reales en el tiempo (al tener datos duplicados, si aplicamos cambios en un “lugar” en el otro lugar ese mismo dato no cambió).
++ Seguridad: Sistemas de autenticación, directorios de seguridad, esquemas de seguridad y de autenticación internas.
++ Acceso: Roles, permisos, formatos y restricciones.
++ Atomicidad: Atributos minimos e indivisibles.
+
+
+
