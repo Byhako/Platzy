@@ -2,3 +2,7 @@
 agm-map {
   height: 400px;
 }
+
+.numero_par {
+  background-color: rgb(199, 214, 216);
+}
