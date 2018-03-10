@@ -1,0 +1,19 @@
+{
+  "name": "verse",
+  "version": "1.0.0",
+  "description": "A simple IoT Plataform - DB Module",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard"
+  },
+  "author": "Ruben E Acosta",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "11.0.0"
+  },
+  "dependencies": {
+    "pg": "7.4.1",
+    "pg-hstore": "2.3.2",
+    "sequelize": "4.35.2"
+  }
+}
