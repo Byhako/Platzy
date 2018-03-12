@@ -1,49 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">PlaztiSquare</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-        </ul>
-        <form class="form-inline m-0">
-          <input class="form-control mr-2" type="text" placeholder="Search">
-          <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-<br/>
-
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
-<hr/>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Lugares Destacdos</h2>
-      <ul class="list-group">
-        <ng-container *ngFor="let lugar of lugares">
-          <li class="list-group-item" *ngIf="lugar.activate">{{lugar.nombre}} </li>
-        </ng-container>
+  <div class="container">
+    <a class="navbar-brand" href="#">PlaztiSquare</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
       </ul>
-    </div>
-
-    <div class="col-md-4">
-      <h2>DESTACADOS</h2>
+      <form class="form-inline m-0">
+        <input class="form-control mr-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
     </div>
   </div>
-</div>
-
-<hr/>
+</nav>
+<router-outlet></router-outlet>
 
 
 <!-- 
