@@ -1,21 +1,39 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
-<hr/>
-<ul>
-  <ng-container *ngFor="let lugar of lugares" >
-    <li *ngIf="lugar.activate">{{lugar.nombre}} </li>
-  </ng-container>
-</ul>
 
-<ul>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">PlaztiSquare</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+      </ul>
+      <form class="form-inline m-0">
+        <input class="form-control mr-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+<!-- 
+<ul class="list-group" >
   <ng-container 
     *ngFor="let lugar of lugares; 
     let i = index"
     [ngSwitch]="lugar.cercania"
   >
     <a><li
+      class="list-group-item"
       contar-clicks
       [ngStyle]="{color: (lugar.activate) ? 'black' : 'gray'}"
       [ngClass]="{numero_par: (i+1)%2!==0}"
@@ -27,6 +45,6 @@
       <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}" >Lejano</span>
     </li></a>
   </ng-container>
-</ul>
+</ul> -->
 
 <!--directivas: *ngFor, *ngIf, [ngStyle], [ngClass], [ngSwitch], *ngSwitchCase-->
