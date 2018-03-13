@@ -90,3 +90,4 @@ smart component -> (listo) Que hace mi componente.
 + Mejorar la capacidad de reutilizar componentes
 
 
+**Estudiar MERN**
