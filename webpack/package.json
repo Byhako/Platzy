@@ -18,7 +18,10 @@
     "build:react": "webpack --config ./react/webpack.config.js",
     "build:json": "webpack --config ./json-loader/webpack.config.js",
     "build:video": "webpack --config ./file-loader-video/webpack.config.js",
-    "build:sass": "webpack --config ./sass-loader/webpack.config.js"
+    "build:sass": "webpack --config ./sass-loader/webpack.config.js",
+    "build:stulus": "webpack --config ./stylus-loader/webpack.config.js",
+    "build:less": "webpack --config ./less-loader/webpack.config.js",
+    "build:postcss": "webpack --config ./postcss-loader/webpack.config.js"
   },
   "keywords": [
     "webpack"
@@ -39,8 +42,10 @@
     "node-sass": "4.7.2",
     "sass-loader": "6.0.7",
     "style-loader": "0.20.1",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
     "url-loader": "0.6.2",
-    "webpack": "^3.10.0",
+    "webpack": "3.10.0",
     "webpack-dev-server": "2.11.1"
   },
   "dependencies": {
