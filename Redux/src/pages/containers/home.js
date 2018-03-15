@@ -6,24 +6,30 @@ import ModalContainer from '../../widgets/containers/modal-container';
 import Modal from '../../widgets/componentes/modal';
 import HandleError from '../../error/containers/handle-error';
 import VideoPlayer from '../../player/container/video-players';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import { List as list } from 'immutable'
 
 class Home extends Component {
-  state = {      //constructor
-    modalVisible: false,
-  }
   
-  handleOpenModal = (media)=>{
-    this.setState({
-      modalVisible: true,
-      media: media,
+  handleOpenModal = (id)=>{
+    // this.setState({
+    //   modalVisible: true,
+    //   media: media,
+    // })
+    this.props.dispatch({
+      type: 'OPEN_MODAL',
+      payload: {
+        mediaId: id,
+      }
     })
   }
 
   handleCloseModal = (event)=>{
-    this.setState({
-      modalVisible: false,
+    // this.setState({
+    //   modalVisible: false,
+    // })
+    this.props.dispatch({
+      type: 'CLOSE_MODAL'
     })
   }
 
@@ -43,13 +49,14 @@ class Home extends Component {
             search={this.props.search}
           />
           {
-            this.state.modalVisible &&  /*si se cumple, renderiza*/
+            this.props.modal.get('visibility') &&  /*si se cumple, renderiza*/
             <ModalContainer>
               <Modal handleClick={this.handleCloseModal}>
                 <VideoPlayer
                   autoplay /*llega true como propiedad*/
-                  src={this.state.media.src}
-                  title={this.state.media.title}
+                  id={this.props.modal.get('mediaId')}
+                  // src={this.state.media.src}
+                  // title={this.state.media.title}
                 />
               </Modal>
             </ModalContainer>
@@ -74,7 +81,8 @@ function mapStateToProps(state, props){
   }
   return{
     categories: categories,
-    search: searchResults
+    search: searchResults,
+    modal: state.get('modal'),
   }
 }
 
