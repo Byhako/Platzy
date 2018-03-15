@@ -33,6 +33,7 @@ class Home extends Component {
           <Related
             categories={this.props.categories}
             handleOpenModal={this.handleOpenModal}
+            search={this.props.search}
           />
           
           <Categories
@@ -59,10 +60,12 @@ class Home extends Component {
 }
 
 function mapStateToProps(state, props){
-  // datos que envio a Home como propiedades
+  const categories = state.get('data').get('categories').map((categoryId) => {
+    return state.get('data').get('entities').get('categories').get(categoryId)
+  })
   return{
-    categories: state.data.categories,
-    search: state.search
+    categories: categories,
+    search: state.get('data').get('search')
   }
 }
 
