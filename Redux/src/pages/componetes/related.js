@@ -11,8 +11,8 @@ function Related(props){
         props.categories.map((item)=>{
           return (
             <ListaCategorias
-              key={item.id}
-              {...item}
+              key={item.get('id')}
+              {...item.toJS()}
               handleOpenModal={props.handleOpenModal}
             />
           )
