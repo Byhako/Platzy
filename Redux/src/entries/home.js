@@ -6,6 +6,8 @@ import reducer from '../reducers/index'
 import Home from '../pages/containers/home'
 import normalizeData from '../schemas/index'
 import { Map as map} from 'immutable'
+import logger from 'redux-logger'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 // function logger({getState, dispatch}) {
 //   return (next) => {
@@ -20,18 +22,21 @@ import { Map as map} from 'immutable'
 //   }
 // }
 
-const logger = ({getState, dispatch}) => next => action => {
-  console.log('accion: ', action)
-  const value = next(action)
-  console.log('nuevo estado : ', getState().toJS())  
-  return value
-}
+// const logger = ({getState, dispatch}) => next => action => {
+//   console.log('accion: ', action)
+//   const value = next(action)
+//   console.log('nuevo estado : ', getState().toJS())  
+//   return value
+// }
 
 const store = createStore(
   reducer,
   map(),
   //enhancer
-  applyMiddleware(logger)
+  composeWithDevTools(
+    applyMiddleware(logger)
+  )
+  
   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
