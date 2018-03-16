@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Search from '../componentes/search';
 import { connect } from 'react-redux';
-// connect a parte de dar propiedades a un componente
-// para renderizar la aplicacion es dar la capacidad de
-// utilizar dispatch como propiedad adicional
+import { bindActionCreators } from 'redux'
+import * as actions from '../../actions/index'
+
 class SearchContainer extends Component{
   state = {
     value: 'busca'
@@ -11,13 +11,7 @@ class SearchContainer extends Component{
   
   handleSubmit = event =>{
     event.preventDefault(); // para evitar que recargue.
-    console.log(this.input.value, 'submit')
-    this.props.dispatch({
-      type:'SEARCH_VIDEO',
-      payload: {
-        query: this.input.value,
-      }
-    })
+    this.props.actions.searchEntities(this.input.value)
   }
 
   setInputRef = elemento =>{
@@ -43,6 +37,10 @@ class SearchContainer extends Component{
   }
 }
 
-// como el buscador no necesita de propiedades del estado
-// no le pasamos parametros a connect
-export default connect()(SearchContainer);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SearchContainer);
