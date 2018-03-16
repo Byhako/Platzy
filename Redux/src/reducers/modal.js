@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable'
 
 const initialState = fromJS({
-  visibility: true,
+  visibility: false,
   mediaId: null
 })
 

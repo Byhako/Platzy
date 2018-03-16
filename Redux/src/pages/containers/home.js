@@ -50,7 +50,8 @@ class Home extends Component {
           />
           {
             this.props.modal.get('visibility') &&  /*si se cumple, renderiza*/
-            <ModalContainer>
+           <ModalContainer>
+             {console.log('mediaId', this.props.modal.get('mediaId'))}
               <Modal handleClick={this.handleCloseModal}>
                 <VideoPlayer
                   autoplay /*llega true como propiedad*/
@@ -86,7 +87,4 @@ function mapStateToProps(state, props){
   }
 }
 
-// connect recibe un parametro que especifica que datos necesitamos
-// y esos datos se obtienen desde el state
-// connect(funcion que parsea datos)(componente)
 export default connect(mapStateToProps)(Home);

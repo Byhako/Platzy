@@ -145,11 +145,11 @@ class VideoPlayer extends Component{
   }
 }
 
-function mapStateToProps(state, props) {
-  console.log('puta', state.get('data').get('entities').get('media').get(props.id))  
-  return{
+function mapStateToProps(state, props){
+  console.log('id', state.get('data').get('entities').get('media').get(props.id) )
+  return {
     media: state.get('data').get('entities').get('media').get(props.id)
   }
 }
 
-export default connect(mapStateToProps)(VideoPlayer)
+export default connect(mapStateToProps)(VideoPlayer);
