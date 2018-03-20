@@ -5,10 +5,11 @@ import setupDataBase from '../lib/db'
 
 module.exports = function setupAgentModel (config) {
   const sequelize = setupDataBase(config)
+  // sequelize.define(nombre, propiedades)
   return sequelize.define('agente', {
     uuid: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false  // es requerido. no dato nulo
     },
     username: {
       type: Sequelize.STRING,

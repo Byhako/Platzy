@@ -4,7 +4,7 @@
   "description": "A simple IoT Plataform - DB Module",
   "main": "index.js",
   "scripts": {
-    "lint": "standard"
+    "standard": "standard"
   },
   "author": "Ruben E Acosta",
   "license": "MIT",
