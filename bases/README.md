@@ -1,3 +1,36 @@
+**DML** es un lenguaje procedimental declarativo, un conjunto de instrucciones que nos apoyarán con el proceso de construcción de la base de datos.
+
+En **DDL**, vamos a especificar el esquema de la base de datos; diccionario de datos, restricciones de integridad y autorizaciones.
+
+##Bases de datos SQL
+
++ La **indexación** funciona como un indice de un libro o de un temario, nos dice donde encontramos un tema y en que pagina.
++ La indexación en SQL se hace por medio de una estructura de arbol, esta nos permite hacer busquedas.
++ Existe el problema que cuando se buscan tipos de datos que no estan necesariamente estructurados en una estructura de datos se busca desde el primer dato hasta el ultimo.
++ Ejemplos; PostgreSQL, MariaDB.
+
+##Bases de Datos No SQL
+
++ La indexación funciona con objetos JSON, no necesariamente funciona como un arbol, se pueden hacer indices dividiendo los objetos por sus caracteristica y particularidades.
++ Ejemplos; MongoDB, Cassandra.
+
+##Bases de datos Analíticas y de Bigdata
+
++ Ejemplos; Hadoop, Hortonworks, Spark
+
+##Bases de datos basadas en aceleración
+
++ Son bases de datos muy rápidas que sin embargo no tienen persistencia.
++ Ejemplos; Redis, neo4j, Kinetica.
+
+##Formas de usos en las bases de datos:
+
++ On premise open source, bases de datos de formato empresarial u opensource instalada en nuestra maquina sin una gran infraestructura.
++ Licenciamiento por cores o sockets, se paga dependiendo de ciertas características; como el hardware en el que va a correr.
++ Licenciamiento modular, se paga por funcionalidades o modulos para necesidades diferentes.
++ Pago por uso a través de SAAS(Software As A Service) o PAAS (Platform As A Service). Es como adquirir una renta y pagar por usar una base de datos.
++ Suscripción de nodos de computo, funciona para plataformas como Hadoop el cual no es centralizado y trabaja de forma distribuida, se paga por nodo utilizado.
+
 ## SQL. Structured Query Language
 
 + sudo mysql -u root -p
@@ -53,3 +86,57 @@ Cuando haga una solicitud no me va importar que nodos del sistema están up-time
 + **Particionamiento** (Partition):
 Esta palabra se va a parecer un poco a disponibilidad, porque básicamente el particionamiento es como yo parto esa información o esa estructura de datos por lo menos en 3 nodos, para evitar que se pierdan mensajes o no sean entregados. Esto soluciona que halla nodos en down-time, y que sin embargo yo pueda dividir un dato que estaba pasando acá que fuera a y que fuera a y lo tengo en un tercer nodo, cuando yo hago esto estoy teniendo tolerancia a esas fallas de comunicación.
 
+**Entidad Fuerte:** La constituyen las tablas principales de la BD, que contienen los registros principales del sistema de información y que requieren de entidades o tablasauxiliares para completar su descripción o información.
+
+**Entidad Debil:** Tablas auxiliares de una tabla principal a la que completan o complementan con la información de sus registros relacionados.
+
+##Llaves
+
+Las llaves nos dan acceso a los datos de una entidad, su notación es la de numeral #.
+
+Las llaves tienen que ser irrepetibles y obligatorias, por lo tanto el ID puede ser una llave.
+
+Una llave puede ser compuesta, esta se compone de 2 numeros, entre ID y Numero de seguro social. (Como un numero de teléfono móvil).
+
+Las llaves **foráneas** son llaves que van a estar en nuestra tabla, que no necesariamente son nuestras llaves primarias pero van a permitir acceder a otra tabla donde ahí sean llaves primarias.
+
+Una llave foranea tiene que ser llave primaria de una tabla (entidad).
+
+Las llaves son fundamentales por que son obligatoriamente índices, los cuales permiten encontrar los datos cuando se necesitan de una forma rápida y ordenada.
+
+## modelo entidad relacion
+
++ **Capa Conceptual:** En esta capa vamos a tener varias entidades, aún sin nombre definido. Las entidades van a tener cada una sus llaves primarias y sus atributos, además van a tener relaciones.
+Para que existan las relaciones “muchos a muchos” se necesitan llaves foráneas en las entidades.
++ **Capa Lógica:** El modelo Entidad-Relación para poder procesar las relaciones “muchos a muchos” las va a partir en entidades que se llaman: Entidades Débiles.
++ **Capa Física:** Este modelo va a ser el paso del modelo lógico hacia la representación que ya va a tener la Base de Datos. En esta capa, ya cada uno de los datos empieza a entrar en las clasificaciones según su tipo de dato.
+
+**Paso 1:** Vamos a identificar cuáles son las entidades que van a resolver nuestros problema.
+
+**Paso 2:** Identificación de las relaciones de las entidades.
+
+**Paso 3:** Diagramar entidades y relaciones.
+
+**Paso 4:** Asignar atributos a las entidades.
+
+Para hacer un buen ejercicio hay que pensar en:
+
++ ¿Que atributos voy a necesitar?
++ ¿Cual va a ser la codificación que voy a utilizar?
++ ¿Como los voy a trabajar dependiendo del tipo de dato?
+
+**Paso 5:** Generar un diagrama conceptual (entidades, relaciones y atributos).
+Las relaciones siempre se van a hacer en 2 sentidos (A con B y B con A).
+
+**Paso 6: Modelo lógico**
+Las relaciones se hacen por medio de entidades débiles, entre las entidades relacionadas, esto es porque no podemos generar muchas llaves foráneas en ambas entidades (fuertes).
+
+En estas entidades debiles se usan ambas llaves primarias de las entidades (fuertes) que tenían relación.
+
+En las entidades debiles no debería haber tipos de datos seriales, estas tendrían que ser integer, ya que las entidades debiles no tienen forma de tener consistencia con esa serialidad.
+
+**Paso 7:** Identificar nuevos atributos que generan nuestras entidades débiles.
+
+**Paso 8:** Construir el diagrama del modelo físico
+
+**Paso 9:** Pasar al estándar de la base de datos (SQL)
