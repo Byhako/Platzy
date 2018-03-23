@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animaciones Sintaxis</title>
+  <!-- ****************************************************************** -->
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    font-family: Arial;
+    perspective: 400px;
+    /* perspective-origin: bottom; */
+  }
+  .container {
+    border: 1px solid red;
+  }
+  .container:hover .cuadrado{
+    animation-play-state: paused;
+  }
+  .cuadrado {
+    height: 200px;
+    width: 200px;
+    background-color: #7dc900;
+    margin: 20px;
+    /* transition: 1s; */
+    animation-name: cuadrado;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count:infinite;
+    /* animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035); */
+    animation-timing-function: ease;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+  }
+  @keyframes cuadrado {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+  <!-- ****************************************************************** -->
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">
+      Hola Ruben
+    </div>
+  </div>
+</body>
+</html>
