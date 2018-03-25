@@ -9,18 +9,19 @@
 <style>
   body {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     height: 100vh;
-    color: white;
+    background-color: darkslategrey;
     font-family: Arial;
     perspective: 400px;
     /* perspective-origin: bottom; */
   }
   .container {
-    border: 1px solid red;
+    border: 3px solid black;
     width: 100%;
-
+    height: 300px;
+    background-color:darkolivegreen;
   }
   .container:hover .cuadrado{
     animation-play-state: paused;
@@ -28,40 +29,47 @@
   .cuadrado {
     height: 200px;
     width: 200px;
-    background-color: #7dc900;
+    /* background-color: #7dc900; */
     margin: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     /* transition: 1s; */
     
-    animation-name: cuadrado;
-    animation-duration: 2s;
+    animation-name: cuadrado, escalera; /*rebote; */
+    animation-duration: 2s, 2s;
     animation-delay: 1s;
-    animation-iteration-count:infinite;
-    
-    /* http://cubic-bezier.com/#.17,.67,.83,.67 */
-    animation-timing-function: cubic-bezier(0.75, -0.31, 0.33, 1.4);
-    
-    /* animation-timing-function: lineal;
-    animation-timing-function: ease;
-    animation-timing-function: ease-in;
-    animation-timing-function: ease-out; */
-    /* animation-timing-function: ease-in-out; */
-    /* frames en el tiempo que dura la animacion */
-    /* animation-timing-function: steps(60); */
-    
+    animation-iteration-count:infinite, 1;
+    animation-timing-function: linear, ease-in-out;
     animation-direction: alternate;
     animation-fill-mode: forwards;
-    position: relative;
   }
   @keyframes cuadrado {
     0% {
       left: 0;
+    background-color: #c95a00;
     }
     100% {
       left: calc(100% - 240px);
+      background-color: #9a00c9;
+    }
+  }
+  @keyframes escalera {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(500px);
+    }
+  }
+  @keyframes rebote {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(100px) scale(1, 0.8);
     }
   }
 </style>
@@ -69,9 +77,18 @@
 </head>
 <body>
   <div class="container">
-    <div class="cuadrado">
-      Hola Ruben
-    </div>
+    <div class="cuadrado" id="cuadrado"></div>
   </div>
+
+  <script>
+    const $cuadrado = document.getElementById('cuadrado')
+    $cuadrado.addEventListener('animationend', (event) => {
+      console.log(event.animationName)
+      if (event.animationName==='rebote') {
+        $cuadrado.style.animationName = 'escalera'
+        $cuadrado.style.animationDuration = '2s'
+      }
+    })
+  </script>
 </body>
 </html>

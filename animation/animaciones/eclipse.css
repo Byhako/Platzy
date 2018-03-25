@@ -1,0 +1,177 @@
+body{
+  margin: 0;
+}
+.container{
+  padding: 20px;
+  height: 100vh;
+  min-height: 400px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  animation-name: oscurecer;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.sol{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: #FDB813;
+  -webkit-box-shadow: 0px 0px 88px 6px rgba(253,184,19,1);
+  -moz-box-shadow: 0px 0px 88px 6px rgba(253,184,19,1);
+  box-shadow: 0px 0px 88px 6px rgba(253,184,19,1);
+}
+.luna{
+  height: 298px;
+  width: 298px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  right: 0;
+  animation-name: luna, oscurecer;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+.nube{
+  position:absolute;
+  width: 250px;
+  background-color: #fff;
+  height: 100px;
+  border-radius: 50px;
+  animation-name: oscurecer-nube;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+.nube1{
+  top: 80px;
+  left: 50px;
+}
+.nube2{
+  top: 80px;
+  right: 50px;
+}
+.nube3{
+  top: 320px;
+  right: 200px;
+}
+.nube4{
+  top: 320px;
+  left: 200px;
+}
+.nube:before{
+  height:100px;
+  width: 100px;
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  top: -40px;
+  border-radius: 50%;
+  left: 30px;
+  animation-name: oscurecer-nube;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+.nube:after{
+  height:150px;
+  width: 150px;
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  top: -50px;
+  border-radius: 50%;
+  left: 70px;
+  animation-name: oscurecer-nube;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+@keyframes luna{
+  from{
+    right: 0;
+  }
+  45%, 55%{
+    right: calc(50% - 149px);
+  }
+  to{
+    right: calc(100% - 298px);
+  }
+}
+
+@keyframes oscurecer{
+  from, 10%, 90%, 100%{
+    background-color: #7ec0ee;
+  }
+  15%, 85%{
+    background-color: #71acd6;
+  }
+  20%, 80%{
+    background-color: #5886a6;
+  }
+  25%, 75%{
+    background-color: #4b738e;
+  }
+  30%, 70%{
+    background-color: #3f6077;
+  }
+  35%, 65%{
+    background-color: #324c5f;
+  }
+  40%, 60%{
+    background-color: #253947;
+  }
+  45%, 55%{
+    background-color: #000;
+  }
+  48%, 52%{
+    background-color: #000;
+  }
+  50%{
+    background-color: #000;
+  }
+}
+@keyframes oscurecer-nube{
+  from, 10%, 90%, 100%{
+    background-color: #ffffff;
+  }
+  15%, 85%{
+    background-color: #e5e5e5;
+  }
+  20%, 80%{
+    background-color: #ccc;
+  }
+  25%, 75%{
+    background-color: #999999;
+  }
+  30%, 70%{
+    background-color: #7f7f7f;
+  }
+  35%, 65%{
+    background-color: #666;
+  }
+  40%, 60%{
+    background-color: #4c4c4c;
+  }
+  45%, 55%{
+    background-color: #000;
+  }
+  48%, 52%{
+    background-color: #000;
+  }
+  50%{
+    background-color: #000;
+  }
+}
+
+@media screen and (max-width: 1199px){
+  .nube{
+    display: none;
+  }
+}
