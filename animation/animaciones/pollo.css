@@ -579,31 +579,19 @@ body .container .globe .floor {
   to {
     transform: translate(-38px, 40px) scale(1.2);
   }
-  .pes-right {
-    border: 1px solid #f00;
-  }
 }
 @-webkit-keyframes ec-r {
   to {
     transform: translate(-38px, 40px) scale(1.2);
-  }
-  .pes-right {
-    border: 1px solid #f00;
   }
 }
 @-o-keyframes ec-r {
   to {
     transform: translate(-38px, 40px) scale(1.2);
   }
-  .pes-right {
-    border: 1px solid #f00;
-  }
 }
 @keyframes ec-r {
   to {
     transform: translate(-38px, 40px) scale(1.2);
-  }
-  .pes-right {
-    border: 1px solid #f00;
   }
 }
