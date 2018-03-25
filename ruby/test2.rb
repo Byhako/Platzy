@@ -5,3 +5,5 @@ RSpec.describe 'test a test1' do
   end
 end
 
+# http://rspec.info/
+
