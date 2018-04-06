@@ -25,3 +25,15 @@ Para trabajar en la consola **interactiva** usamos:
 ```
 sudo -u postgres psql
 ```
+
+_Creando un usiario y una base de datos_
+```
+postgres=# CREATE ROLE platzi WITH LOGIN PASSWORD 'platzi';
+CREATE ROLE
+postgres=# CREATE DATABASE verse;
+CREATE DATABASE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE verse TO platzi;
+GRANT
+postgres=#  \quit
+```
+

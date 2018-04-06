@@ -1,6 +1,5 @@
 'use strict'
 
-// import setupDatabase from './lib/db'
 const setupDatabase = require('./lib/db')
 const setupAgentModel = require('./models/agent')
 const setupMetricModel = require('./models/metric')
@@ -17,6 +16,9 @@ module.exports = async function (config) {
 
   await sequelize.authenticate()
 
+  if (config.setup) {
+    await sequelize.sync({ force: true }) // crear base de datos, si existe, borra y crea nueva
+  }
   const Agent = {}
   const Metric = {}
 
