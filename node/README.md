@@ -36,4 +36,18 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE verse TO platzi;
 GRANT
 postgres=#  \quit
 ```
+Postgres por defecto permite conecciones sin password. Para cambiar esto debemos editar el archivo ph_hba.conf:
 
+/etc/postgresql/your.installed.version/main/pg_hba.conf
+
++ Cambiar todo lo que diga peer o md5, a passowrd. Para ver todos los métodos de autenticación como trust, password, peer, md5 … : 
+  https://www.postgresql.org/docs/9.1/static/auth-methods.html
+
+
++ Comando de reinicio de postgres: sudo service postgresql restart
+
+
+### Algunos modulos:
+
++ inquirer: Permite hacer preguntas en consola, y tomar decisiones con las respuestas.
++ chalk: Estetica para los strings que se arrojan en consola.
