@@ -4,7 +4,8 @@
   "description": "A simple IoT Plataform - DB Module",
   "main": "index.js",
   "scripts": {
-    "standard": "standard"
+    "standard": "standard",
+    "setup": "DEBUG=verse-db:* node setup.js"
   },
   "author": "Ruben E Acosta",
   "license": "MIT",
@@ -12,6 +13,9 @@
     "standard": "11.0.0"
   },
   "dependencies": {
+    "chalk": "^2.3.2",
+    "debug": "3.1.0",
+    "inquirer": "^5.2.0",
     "pg": "7.4.1",
     "pg-hstore": "2.3.2",
     "sequelize": "4.35.2"
