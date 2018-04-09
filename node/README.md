@@ -1,4 +1,4 @@
-## Postgres
+## Instalando Postgres
 
 segun como dice en la pagina oficial:
 
