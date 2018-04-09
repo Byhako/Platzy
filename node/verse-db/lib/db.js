@@ -1,6 +1,8 @@
 'use strict'
 
-import Sequelize from 'sequelize'
+// import Sequelize from 'sequelize'
+const Sequelize = require('sequelize')
+
 
 let sequelize = null
 

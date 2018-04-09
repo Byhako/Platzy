@@ -6,12 +6,13 @@
   "scripts": {
     "standard": "standard",
     "setup": "DEBUG=verse-db:* node setup.js",
-    "test": "DEBUG=verse-db:* ava tests/ --verbose"
+    "test": "DEBUG=verse-db:* nyc --reporter=lcov ava tests/ --verbose"
   },
   "author": "Ruben E Acosta",
   "license": "MIT",
   "devDependencies": {
     "ava": "0.25.0",
+    "nyc": "^11.6.0",
     "sqlite3": "4.0.0",
     "standard": "11.0.0"
   },

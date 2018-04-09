@@ -1,9 +1,14 @@
 'use strict'
 
-import defaults from 'defaults'
-import setupDatabase from './lib/db'
-import setupAgentModel from './models/agent'
-import setupMetricModel from './models/metric'
+// import defaults from 'defaults'
+// import setupDatabase from './lib/db'
+// import setupAgentModel from './models/agent'
+// import setupMetricModel from './models/metric'
+
+const defaults = require('defaults')
+const setupDatabase = require('./lib/db')
+const setupAgentModel = require('./models/agent')
+const setupMetricModel = require('./models/metric')
 
 module.exports = async function (config) {
   config = defaults(config, {
