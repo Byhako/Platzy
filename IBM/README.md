@@ -1,4 +1,4 @@
-## IBM (International Business Machines).
+### IBM (International Business Machines).
 
 Tiene utilizades para los siguientes perfiles:
 
@@ -28,7 +28,7 @@ IBM antes manejaba el hardware de la tecnología como discos duros lo comerciali
 
 IBM es la primera startup de TI con 106 años en servicio y fue el primero en crear el primer equipo de Ti.
 
-## Recursos de IBM para diferentes perfiles
+### Recursos de IBM para diferentes perfiles
 
 + IBM Academic Initiative.
  Programa de relacionamiento académico de IBM
@@ -49,3 +49,24 @@ IBM es la primera startup de TI con 106 años en servicio y fue el primero en cr
 + Global Entrepenuer Program(Para emprendedores):
   https://developer.ibm.com/startups
 
+### IBM Cloud, la nube empresarial
+
+TheNorthface (https://www.thenorthface.com/xps): Sitio web con inteligencia artificial.
+
+**Componentes que hacen realidad este sitio web:**
+
+1. Runtimes (donde corre el codigo).
+  + IBM containers.
+  + SDK for Node.js
+2. Watson.
+  + Conversation(traduce el lenguaje natural a maquina para tener resultados).
+3. DevOps(Estabilidad en tu aplicación).
+  + Auto-Scaling.
+  + Monitoring and Analytics.
+4. Base de datos.
+  + Compose for PostgreSQL.
+5. Weather(Clima).
+  + Weather Company Data.
+6. Integration (Comunicacion entre el usuario y los recursos del negocio).
+  + API Connect.
+  + Secure Gateway.
