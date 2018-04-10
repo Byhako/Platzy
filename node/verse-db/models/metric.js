@@ -1,5 +1,8 @@
 'use strict'
 
+// import Sequelize from 'sequelize'
+// import setupDataBase from '../lib/db'
+
 const Sequelize = require('sequelize')
 const setupDataBase = require('../lib/db')
 

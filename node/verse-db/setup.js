@@ -1,9 +1,9 @@
 'use strict'
 
+import inquirer from 'inquirer'
+import chalk from 'chalk'
+import db from './'
 const debug = require('debug')('verse-db:db::setup')
-const inquirer = require('inquirer')
-const chalk = require('chalk')
-const db = require('./index')
 
 const prompt = inquirer.createPromptModule()
 
@@ -43,7 +43,6 @@ function handleFatalError (err) {
 }
 
 setup()
-
 
 // Las preguntas que hacemos con inquirer son promesas. Cuando el usuario
 // responda, la promesa se resuelve y obtenemos un valor.
