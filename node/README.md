@@ -46,6 +46,12 @@ Postgres por defecto permite conecciones sin password. Para cambiar esto debemos
 
 + Comando de reinicio de postgres: sudo service postgresql restart
 
+----------------------------------------------------------
+
++ Ava.js es un test runner que permite definir cada uno de los tests de nuestra app y soporta ECMAScript 
+  https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md
+
+
 
 ### Algunos modulos:
 
