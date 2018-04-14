@@ -70,3 +70,47 @@ TheNorthface (https://www.thenorthface.com/xps): Sitio web con inteligencia arti
 6. Integration (Comunicacion entre el usuario y los recursos del negocio).
   + API Connect.
   + Secure Gateway.
+
+Your New Personal Access Token:
+h9X_yqpjzmr_oQL3qWyq
+
+## Intalar Docker debian 9
+Install Prerequisites
+  apt-get install apt-transport-https dirmngr
+Add Docker Repository
+Add Docker package depository to your /etc/apt/sources.list sources list:
+  echo 'deb https://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list
+Obtain docker's repository signature and updated package index:
+  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+  apt-get update
+Install Docker
+  apt-get install docker-engine
+
+## Instalación de IBM Cloud Developer Tools CLI
+
+https://console.bluemix.net/docs/cli/idt/setting_up_idt.html#add-cli
+
+bx login -u eldragondera1@gmail.com 
+
+*Para obtener los comandos de administracion de plugins*
+bx plugin
+
+bx plugin install IBM-Containers
+bx plugin install container-registry
+bx plugin install container-service
+
+
+### Documentacion completa de IBM Cloud Container Service.
+
+https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install
+
+### configurar kubernetes
+
+bx login -a https://api.ng.bluemix.net   
+bx cs region-set us-south
+
+bx cs cluster-config imbcloudplatzi  
+
+
+
+
