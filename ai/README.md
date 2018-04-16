@@ -27,4 +27,29 @@ Los humanos persivimos la información a travez de nuestros sentidos. Las comput
 
 5. Planeacion y navegacion: Convivir con esa inteligencia artificial en el contexto humano evaluando si es eficaz, si es etico, si es presiso.
 
+<br/>
+
+El machine learning es una rama de la inteligencia artificial enfocada en que los sistemas aprendan autónomamente.
+
+En el contexto de los sistema inteligentes APRENDER significa que una máquina tenga la capacidad de identificar patrones complejos en millones de datos.
+
+Los tipos de aprendizaje principales son:
+
++ *Aprendizaje supervisado*: Algoritmos que permiten clasificar o hacer predicciones a futuro basados en el comportamiento o carácteristicas de los datos ya almacenados. A los datos ya almacenados se les conoce como datos de entrenamiento, los cuales nosotros mismos le proporcionamos al sistema con el fin de que aprenda a identificar los patrones específicos (con esto guíamos el algoritmo). En algoritmos supervisados la caracterítica principal de los datos de entrenamiento es que ya vienen etiquetados (clasificados), es decir, que para cada entrada se conoce previamente su salida al entrar al sistema.
+
++ *Aprendizaje no supervisado*: Algoritmos con un caracter altamente exploratorio, cuyo fin es encontrar patrones, estructuras o formas dentro de datos de entrenamiento no etiquetados (no clasificados), es decir que el algoritmo va a ciegas y debe aprender a identificar por si solo conjuntos y grupos de datos con base a sus similitudes y carácteristicas.
+
+En los *supervisados* se conoce la entrada y la salida de la caja negra y debe aprender a identificar los datos nuevos que lleguen al sistema con base a estos; mientras que en los *no supervisados* el sistema solo conoce la entrada de la caja negra, y debe tratar de inferir cual sería la salida.
+
+
+La *Regresión Logística* es un algoritmo que nos sirve para predecir la probabilidad de que un evento pase o no. También es conocida como Regresión Binaria ya que solamente puede predecir entre 0 o 1.
+
+La Regresión Logística la utilizamos para clasificar, donde:
+
++ 0 = Clase negativa
++ 1 = Clase positiva
+
+Todos los elementos que cumplen con los patrones que sigue el algoritmo que estamos programando pertenecen a la “clase positiva”.
+
+
 
