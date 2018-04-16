@@ -51,5 +51,24 @@ La Regresión Logística la utilizamos para clasificar, donde:
 
 Todos los elementos que cumplen con los patrones que sigue el algoritmo que estamos programando pertenecen a la “clase positiva”.
 
+#### Algoritmos supervisados:
++ Regresion lineal.
++ Regresion logistica.
++ Regresion logistica multinomial.
+
+#### Algoritmos *no* supervisados.
++ k-Means. Sirve para agrupar los datos en función de ciertos patrones.
+ Dado un conjunto inicial de k centros (donde k es cualquier número o cualquier variable) el algoritmo continúa iterando entre dos pasos.
+
+ - Paso de asignación. Asigna cada dato al grupo con la media más cercana, es decir, la partición de las observaciones generadas por los centros.
+ - Paso de actualización. Calcula nuevos centros como el centro de las  observaciones en el grupo o partición.
+
+ El algoritmo se considera que converge cuando los centros ya no cambian.
+
+### Problemas frecuentes (Underfitting Vs. Overfitting)
+
++ Underfitting (Subajustar) No puede capturar la tendencia de los datos. Es generalmente el resultado de un modelo extremadamente simple.
+
++ Overfitting (Sobreajustar) Se presenta cuando un algoritmo está perfectamente adaptado a los datos con los que lo entrenamos., pero si tratamos de predecir nuevos datos , lo más probable es que nos de error.
 
 
