@@ -106,11 +106,17 @@ https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install
 
 ### configurar kubernetes
 
+https://kubernetes.io/docs/setup/independent/install-kubeadm/ 
+
 bx login -a https://api.ng.bluemix.net   
 bx cs region-set us-south
 
 bx cs cluster-config imbcloudplatzi  
 
 
-
-
+kubectl run mongo --image=mongo --port=27017
+kubectl expose deployment mongo  --type=NodePort
+kubectl run mytmp --image=kavisureh/employee --port=80
+kubectl expose deployment mytmp --type=NodePort --port=80 --target-port=8888
+kubectl get pod
+kubectl proxy
