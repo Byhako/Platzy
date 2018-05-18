@@ -23,36 +23,14 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  onPress () {
-    Alert.alert(
-      'Alert Title',
-      'My Alert Msg',
-      [
-        {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-        {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
-      ],
-      { cancelable: false }
-    )
-  }
+  
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Button
-          onPress={this.onPress}
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <View styles={[styles.box, styles.red]} />
+        <View styles={[styles.box, styles.green]} />
+        <View styles={[styles.box, styles.blue]} />
+
       </View>
     )
   }
@@ -60,19 +38,31 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1,  //all screem
+    flexDirection: 'column',
     justifyContent: 'center',
+    // justifyContent: 'space-between',  // solo espacio entre elementos
+    // justifyContent: 'space-arrow', // tengo en cuenta bordes
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    flexWrap: 'wrap', // sobresale del contenedor, -> reorganiza elementos
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'black',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  red: {
+//    alignSelf: 'flex-end',
+    flex: 2,
+    backgroundColor: 'red'
+  },
+  green: {
+    flex: 1,
+    backgroundColor: 'green'
+  },
+  blue: {
+//    alignSelf: 'flex-start',
+    backgroundColor: 'blue'
   },
 })
