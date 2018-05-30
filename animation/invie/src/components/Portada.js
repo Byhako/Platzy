@@ -45,7 +45,8 @@ class Portada extends Component {
 function mapStateToProps (state, props) {
   return {
     logo: state.logoPortada,
-    menu: state.menu
+    menu: state.menu,
+    isAnimated
   }
 }
 
