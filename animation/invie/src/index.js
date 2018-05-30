@@ -4,12 +4,16 @@ import cheet from 'cheet.js'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 
-import './index.css';
-import Invie from './components/Invie';
-import registerServiceWorker from './registerServiceWorker';
+import Invie from './components/Invie'
+import registerServiceWorker from './registerServiceWorker'
 import logoPortada from "./images/invie.png"
 import g1 from "./images/invie-acustica.png"
 import g2 from "./images/invie-classic.png"
+import g3 from "./images/easter-a.png"
+import g4 from "./images/easter-b.png"
+
+import './css/invie.css'
+import './css/animation.css'
 
 const initialState = {
   menu: [
@@ -56,6 +60,26 @@ const store = createStore(reducer, initialState)
 const easter = {
   menu: [
     {href: 'index.html', title: 'Home'},
+  ],
+  guitarras: [
+    {image: g3,
+      alt: 'Guitarra padre de familia',
+      name: 'Invie Padre',
+      features: [
+                  'Copiar Simpson',
+                  'Aire pura',
+                  'Incluye manopla invisible para tu papa'
+                ]
+      },
+      {image: g4,
+        alt: 'Guitarra Invie classNameic',
+        name: 'Invie anime',
+        features: [
+          'Estilo shoen',
+          'Sexy',
+          'Muestra lo que llevas en el Kokoro'
+                  ]
+      }
   ]
 }
 

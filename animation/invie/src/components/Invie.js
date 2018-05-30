@@ -4,8 +4,6 @@ import Portada from './Portada'
 import Guitarras from './Guitarras'
 import Footer from './Footer'
 
-import '../css/invie.css'
-
 class Invie extends Component {
   render() {
     return (
