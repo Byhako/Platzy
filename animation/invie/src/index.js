@@ -16,6 +16,7 @@ import './css/invie.css'
 import './css/animation.css'
 
 const initialState = {
+  isAnimated: false,
   menu: [
     {href: 'index.html', title: 'Home'},
     {href: '#guitarras.html', title: 'Guitarras'},
@@ -58,6 +59,7 @@ function reducer (state, action) {
 const store = createStore(reducer, initialState)
 
 const easter = {
+  isAnimated: 'is-animated',
   menu: [
     {href: 'index.html', title: 'Home'},
   ],
