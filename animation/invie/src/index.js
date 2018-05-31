@@ -7,6 +7,7 @@ import {createStore} from 'redux'
 import Invie from './components/Invie'
 import registerServiceWorker from './registerServiceWorker'
 import logoPortada from "./images/invie.png"
+import logoPlatzi from "./images/platzi.png"
 import g1 from "./images/invie-acustica.png"
 import g2 from "./images/invie-classic.png"
 import g3 from "./images/easter-a.png"
@@ -60,9 +61,8 @@ const store = createStore(reducer, initialState)
 
 const easter = {
   isAnimated: 'is-animated',
-  menu: [
-    {href: 'index.html', title: 'Home'},
-  ],
+  menu: [ ],
+  logoPortada: logoPlatzi,
   guitarras: [
     {image: g3,
       alt: 'Guitarra padre de familia',
