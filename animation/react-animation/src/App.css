@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  /* animation: fade infinite 2s linear; */
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }  
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade {
+
+}
+
+.fade-enter {
+/* estado inicial de entrada*/
+  animation: fade 1s;
+}
+
+.fade-enter-active {
+/* estado final de entrada */
+}
+
+.fade-leave {
+  /* estado inicial de salida */
+  animation: fade 1s;
+}
+
+.fade-leave-active {
+  /* estado final de salida */
+}

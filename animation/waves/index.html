@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waves</title>
+</head>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      position: relative;
+      height: 500px;
+      background: #0f9bf6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .content {
+      font-family: Arial;
+      text-align: center;
+      font-size: 2em;
+      color:rgb(255,255,255,0.8);
+    }
+    .waves {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -135px;
+      height: 527px;
+      width: 100%;
+
+    }
+    .wave{
+      width: 2402px;
+      height: 427px;
+      background: url(waves.png) center bottom no-repeat;
+      position: absolute;
+      left: -180px;
+      bottom: 0;
+      animation: 5s wave ease-in-out infinite alternate;
+    }
+    .wave.a {
+      background-position: 0 -854px;
+    }
+    .wave.b {
+      background-position: 0 -427px;
+      animation-delay: 0.6s;
+    }
+    .wave.c {
+      background-position: 0 0;
+      animation-delay: 1.2s;
+    }
+    @keyframes wave {
+      0% {
+        transform: translateX(0px) translateY(0px);
+      }
+      50% {
+        transform: translate(-80px, 30px );
+      }
+      100% {
+        transform: translate(160px, -60px);
+      }
+    }
+  </style>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Hola Bebe.</h1>
+      <p>Estoy sobre unas olas geniales!!!</p>
+    </div>
+    <div class="waves">
+      <div class="wave circulo a "></div>
+      <div class="wave circulo b "></div>
+      <div class="wave circulo c "></div>
+    </div>
+
+  </div>
+</body>
+</html>
