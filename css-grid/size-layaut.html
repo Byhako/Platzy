@@ -11,9 +11,9 @@
     }
     .container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      grid-gap: 10px;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      grid-gap: 5px;
       height: 100vh;
     }
     .item {
@@ -23,17 +23,16 @@
       border-radius: 10px;
     }
     .item:nth-of-type(1) {
-      grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 2;
     }
     /* span dice cuantos espacios ocupara */
-    .item:nth-of-type(8) {
-      /* grid-column: 1 / span 2; */
-      grid-column: 1 / -1;
+    .item:nth-of-type(2) {
+      grid-column: 4 / span 2;
+      grid-row: 1 / span 2;
     }
-    /* en que linea comienza y en cual termina */
-    .item:nth-of-type(7) {
-      grid-column: 2 / 4;
+    .item:nth-of-type(3) {
+      grid-column: 6 / span 2;
     }
 
   </style>
@@ -46,14 +45,6 @@
     <div class="item">contenido #3</div>
     <div class="item">contenido #4</div>
     <div class="item">contenido #5</div>
-    <div class="item">contenido #6</div>
-    <div class="item">contenido #7</div>
-    <div class="item">contenido #8</div>
-    <div class="item">contenido #9</div>
-    <div class="item">contenido #10</div>
-    <div class="item">contenido #11</div>
-    <div class="item">contenido #12</div>
-
   </section>
 </body>
 </html>
