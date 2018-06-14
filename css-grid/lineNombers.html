@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Name Lines</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: [inicio] 1fr [l2] 1fr [l3] 1fr [destaca-end] 1fr [l5] 1fr [destaca2-end] 1fr [l7] 1fr [final];
+      grid-template-rows: [inicio] 200px [l2] 200px [final];
+      grid-gap: 5px;
+      height: 100vh;
+    }
+    .item {
+      background: lightblue;
+      padding: 10px;
+      border: 1px solid red;
+      border-radius: 10px;
+    }
+    .item:nth-of-type(1) {
+      grid-column: inicio / destaca-end;
+      grid-row: inicio / final;
+    }
+    .item:nth-of-type(2) {
+      grid-column: destaca-end / destaca2-end;
+      grid-row: inicio / final;
+    }
+    .item:nth-of-type(3) {
+      grid-column: destaca2-end / final;
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <!-- .item{contenido #$}*12 -->
+    <div class="item">contenido #1</div>
+    <div class="item">contenido #2</div>
+    <div class="item">contenido #3</div>
+    <div class="item">contenido #4</div>
+    <div class="item">contenido #5</div>
+  </section>
+</body>
+</html>
