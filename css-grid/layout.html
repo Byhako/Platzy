@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Layout</title>
+</head>
+  <style>
+    .container {
+      margin: 0px;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      grid-template-areas: "nav nav"
+                           "sidebar contenido";
+    }
+    .nav {
+      grid-area: nav;
+      height: 70px;
+      background-color: lightgreen;
+    }
+    .sidebar {
+      grid-area: sidebar;
+      background-color: green;
+      height: calc(100vh - 70px);
+    }
+    .contenido {
+      grid-area: contenido;
+      background-color: whitesmoke;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 120px);
+      grid-template-rows: repeat(auto-fill, 120px);
+      grid-gap: 10px;
+      justify-content: center; /*centra toda la grilla*/
+      align-items: center; /* centra horizontal cada item dentro de cada celda*/
+      justify-items: center; /*centra vertical cada item dentro de cada celda*/
+      padding-top: 10px;
+    }
+    .item {
+      border: 1px solid green;
+      background-color: lime;
+      width: 100px;
+      height: 100px;
+      margin: 0px;
+    }
+  </style>
+<body>
+  <div class="container">
+    <div class="nav"></div>
+    <div class="sidebar"></div>
+    <div class="contenido">
+      <div class="item">item #1</div>
+      <div class="item">item #2</div>
+      <div class="item">item #3</div>
+      <div class="item">item #4</div>
+      <div class="item">item #5</div>
+      <div class="item">item #6</div>
+      <div class="item">item #7</div>
+      <div class="item">item #8</div>
+      <div class="item">item #9</div>
+      <div class="item">item #10</div>
+      <div class="item">item #11</div>
+      <div class="item">item #12</div>
+      <div class="item">item #13</div>
+      <div class="item">item #14</div>
+      <div class="item">item #15</div>
+    </div>
+  </div>
+</body>
+</html>
