@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Platzi</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+    .hero {
+      background-color: #23475b;
+      color: white;
+      padding: 32px 15px;
+      display: grid;
+      grid-template-columns: minmax(auto, 1024px);
+      justify-content: center;
+    }
+    .hero-container {
+      display: grid;
+      grid-template-columns: 70px 1fr 320px;
+      grid-template-areas: "badge title form"
+                           ". description form"
+                           ". countdown form";
+      grid-gap: 10px;
+    }
+    .badge {
+      grid-area: badge;
+    }
+    .badge img {
+      max-width: 70px;
+    }
+    .title {
+      grid-area: title;
+      font-size: 36px;
+      font-weight: normal;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    .form {
+      grid-area: form;
+      text-align: center;
+      background: rgba(255,255,255,0.9);
+      padding: 1.5em;
+      border-radius: 10px;
+    }
+    .form input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #dbdbe2;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 10px;  
+    }
+    .form p {
+      font-size: 20px;
+      color: #3a3b3f;
+      margin-bottom: 1em;
+    }
+    .form button {
+      background: #98ca3f;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      border-bottom: 5px solid #6d932b;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .countdown {
+      grid-area: countdown;
+    }
+    .countdown p {
+      font-size: 20px;
+      text-align: center;
+      font-weight: 300;
+    }
+    .countdown span {
+      font-size: 33px;
+    }
+    .countdown span:after {
+      content: ":";
+      display: inline-block;
+      margin: 0px 5px;
+    }
+
+    .countdown span:last-child:after {
+      display: none;
+    }
+    .description {
+      grid-area: description;
+    }
+    @media screen and (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 70px 1fr;
+        grid-template-areas: "badge title"
+                             "description description"
+                             "form form"
+                             "countdown countdown";
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-container">
+      <div class="badge">
+        <img src="./images/badge.png" alt="">
+      </div>
+      <h1 class="title">
+        Curso de CSS GRID
+      </h1>
+      <div class="description">
+        <p>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.</p>
+      </div>
+      <form class="form">
+        <p>Registrate al Curso</p>
+        <input type="text" placeholder="Nombre">
+        <input type="email" placeholder="Correo">
+        <button type="submit">Comienza ahora.</button>
+      </form>
+      <div class="countdown">
+        <p>Lanzamiento:</p>
+        <p>
+          <span>01d</span>
+          <span>03h</span>
+          <span>09m</span>
+          <span>05s</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
