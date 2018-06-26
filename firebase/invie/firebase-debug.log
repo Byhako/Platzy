@@ -1,0 +1,32 @@
+[debug] [2018-06-26T20:44:05.273Z] ----------------------------------------------------------------------
+[debug] [2018-06-26T20:44:05.278Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2018-06-26T20:44:05.279Z] CLI Version:   3.19.1
+[debug] [2018-06-26T20:44:05.279Z] Platform:      linux
+[debug] [2018-06-26T20:44:05.279Z] Node Version:  v9.8.0
+[debug] [2018-06-26T20:44:05.279Z] Time:          Tue Jun 26 2018 15:44:05 GMT-0500 (-05)
+[debug] [2018-06-26T20:44:05.279Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-26T20:44:05.300Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-26T20:44:05.300Z] > authorizing via signed-in user
+[debug] [2018-06-26T20:44:05.305Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/platzi-invie-7d300  
+  
+ Tue Jun 26 2018 15:44:05 GMT-0500 (-05)
+[debug] [2018-06-26T20:44:06.038Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-26T20:44:06.040Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/platzi-invie-7d300/tokens  
+  
+ Tue Jun 26 2018 15:44:06 GMT-0500 (-05)
+[debug] [2018-06-26T20:44:06.587Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-26T20:44:06.590Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/platzi-invie-7d300  
+  
+ Tue Jun 26 2018 15:44:06 GMT-0500 (-05)
+[debug] [2018-06-26T20:44:07.470Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ruben/github/Platzy/firebase/invie'...
+[info] 
+[debug] [2018-06-26T20:44:07.476Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/974737102767/clients/_:getWebAppConfig  
+  
+ Tue Jun 26 2018 15:44:07 GMT-0500 (-05)
+[debug] [2018-06-26T20:44:08.274Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
