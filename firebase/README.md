@@ -52,6 +52,37 @@ $ firebase serve
     "public": "./"
   }
 ```
+### Conectando con Google.
+  var provider = new firebase.auth.GoogleAuthProvider()
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+
+  firebase.auth().signInWithPopup(provider)
+  .then((datosUser) => {
+    console.log(datosUser)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+
+  event.preventDefault()
+  firebase.auth().signOut()
+
+### Conectando con Facebook.
+  https://developers.facebook.com
+
+## Bases de Datos
+
+**Podemos usar el modelo no relacional siempre que consideremos lo siguiente:**
+
++ La coherencia de los datos No es crítica (sólo en casos específicos lo es, la mayoría de veces no)
+
++ No hay estándares sobre cómo estructurar la información en el modelo no relacional.
+
++ Hacer Business Intelligence sobre el modelo no relacional es más complicado.
+
++ Se requieren un conocimiento sólido en programación.
+
++ Cada base de datos tiene sus peculiaridades y métodos (Firebase, Mongo, etc).
 
 
 

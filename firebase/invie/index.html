@@ -4,11 +4,9 @@
     <title>Invie - tus mejores guitarras!!</title>
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/invie.css"/>
-    
+    <link rel="stylesheet" href="css/invie.css"/>    
 
     <meta name='viewport' content="width=device-width, initial-scale=1", user-scalable=no>
-    
 
     <!-- <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css"/> -->
   </head>
@@ -32,6 +30,12 @@
             <li>
               <a href="precios.html">Precios</a>
             </li>
+            <li id='login'>
+              <a href="">Login</a>
+            </li>
+            <li id='logout'>
+              <a href="">Logout</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -43,9 +47,6 @@
     </section>
     <section id="guitarras" class="guitarras contenedor"> <!-- guitarras -->
       <h2>Nuestra guitarras</h2><!-- titulo -->
-      <div class="video">
-        <iframe class="video-src" width="560" height="315" src="https://www.youtube.com/embed/BGLbAJWEK0E?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
       
       <article class="guitarra"> <!-- guitarra 1 -->
         <img class="derecha" data-src="images/invie-acustica.png" alt="Guitarra Invie Acustica" width="350"/>
@@ -117,11 +118,12 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js'></script>
 
-<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
 
 <!-- -------------- Initialize Firebase  --------------- -->
 
-<!--     <script>
+    <script>
       var config = {
         apiKey: "AIzaSyDHqes8FgeZYWwWnO19Tid4Ut8N_NkPwvc",
         authDomain: "platzi-invie-7d300.firebaseapp.com",
@@ -132,7 +134,7 @@
       };
       firebase.initializeApp(config);
     </script>
- -->
+
 <!-- -------------- End Firebase  --------------- -->
 
   <script type="text/javascript" src="./js/index.js"></script>
