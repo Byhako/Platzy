@@ -99,7 +99,7 @@ input:focus, textarea:focus {
 }
 
 .contenedor {
-  max-width: 800px;   /* OJO CON ESTO */
+  max-width: 1000px;   /* OJO CON ESTO */
   margin: auto;
   position: relative;
 }
@@ -162,7 +162,6 @@ input:focus, textarea:focus {
 
 
 .portada {
-
   color: white;
   padding: 20px;
   height: 500px;
@@ -177,7 +176,7 @@ input:focus, textarea:focus {
   font-size: 24px;
   display: inline-block;
   position: absolute;
-  right: 0;
+  left: 130px;
 }
 
 .menu li {

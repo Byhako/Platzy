@@ -1,5 +1,6 @@
 const ref = firebase.database().ref("usuario")
-const btnLogin = document.getElementById('login')
+const refTest = firebase.database().ref("test")
+
 const btnLogout = document.getElementById('logout')
 
 const btnPush = document.getElementById('btn-push')
@@ -7,46 +8,41 @@ const btnUpdate = document.getElementById('btn-update')
 const btnSet = document.getElementById('btn-set')
 const btnDelete = document.getElementById('btn-delete')
 
-const refTest = firebase.database().ref("test")
+const perfilNombre = document.getElementById('perfilNombre')
+const perfilEmail = document.getElementById('perfilEmail')
+const perfilTelefono = document.getElementById('perfilTelefono')
+const perfilDireccion = document.getElementById('perfilDireccion')
+const datosPerfil = document.getElementById('datosPerfil')
+
+const btnEditar = document.getElementById('perfilEditar')
+
+const formularioPerfil = document.getElementById('formularioPerfil')
+const nombreForm = document.getElementById('nombreForm')
+const emailForm = document.getElementById('emailForm')
+const telefonoForm = document.getElementById('telefonoForm')
+const calleForm = document.getElementById('calleForm')
+const interiorForm = document.getElementById('interiorForm')
+const coloniaForm = document.getElementById('coloniaForm')
+const cpForm = document.getElementById('cpForm')
+
+const btncancelar = document.getElementById('cancelForm')
 
 var usuario = {}
 
+//*****************************************************
+// escuchador de sesion
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    btnLogin.style.display = "none"
-    btnLogout.style.display = "inline-block"
+    const uid = user.uid
+    leerInfo(uid)
+    usuario = {uid}
     }
   else{
-    btnLogin.style.display = "inline-block"
-    btnLogout.style.display = "none"
+    window.location.href = 'index.html'
   }
 })
+//*****************************************************
 
-btnLogin.addEventListener('click', () => {
-  event.preventDefault()
-  // var provider = new firebase.auth.GoogleAuthProvider()
-  var provider = new firebase.auth.FacebookAuthProvider()
-
-  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
-  provider.addScope('public_profile')
-
-  firebase.auth().signInWithPopup(provider)
-  .then((datosUser) => {
-    console.log(datosUser)
-
-    usuario = {
-      nombre: datosUser.user.displayName,
-      email: datosUser.user.email,
-      uid: datosUser.user.uid
-    }
-    console.log(usuario)
-    addUser(usuario, usuario.uid)
-  })
-  .catch((err) => {
-    console.log(err)
-  })
-
-})
 
 btnLogout.addEventListener('click', function(){
     event.preventDefault()
@@ -54,9 +50,6 @@ btnLogout.addEventListener('click', function(){
 })
 
 
-function addUser(usuario, uid) {
-  ref.child(uid).update(usuario)
-}
 
 /*El metodo push, genera un nuevo nodo CON un nuevo uid con cada click dentro 
 del nodo que tenga como referencia.*/
@@ -136,3 +129,61 @@ btnDelete.addEventListener('click', () => {
     console.log('Error ',err)
   })
 })
+
+// Leer informacion de la base de datos.
+
+/*El metodo once, lee la informacion de fribase cada vez que nosotros
+actualizamos la pagina, si no se actualiza, aunque la informacion
+cambie en la base de datos, la pagina no actualiza sola. El metodo
+on, es un escuchador permanente, cada vez que cambia la informacion
+en la base de datos, se actuliza en los dispositivos.*/
+function leerInfo (uid) {
+  ref.child(uid).on('value', (data) => {
+    const dat = data.val()
+    llenarInfo(data.nombre, data.email, data.telefono, data.direccion)
+  })
+}
+
+function llenarInfo (nombre, email, telefono, direccion) {
+  perfilNombre.innerHTML = nombre
+  perfilEmail.innerHTML = email
+  perfilTelefono.innerHTML = telefono
+  perfilDireccion.innerHTML = direccion.calle + ', ' + direccion.interior
+}
+
+btnEditar.addEventListener('click', () => {
+  datosPerfil.style.display = 'none'
+  formularioPerfil.style.display = 'flex'
+})
+
+btncancelar.addEventListener('click', () => {
+  datosPerfil.style.display = 'block'
+  formularioPerfil.style.display = 'none'
+})
+
+function editarDatos () {
+  event.preventDefault()
+
+  // firebase.auth().currentUser
+
+  const obj = {
+    nombre: nombreForm.value,
+    email: emailForm.value,
+    telefono : telefonoForm.value,
+    direccion: {
+      calle: calleForm.value,
+      interior: interiorForm.value,
+      colonia: coloniaForm.value,
+      cp: cpForm.value
+    }
+  }
+  console.log('guardar',obj)
+  ref.child(usuario.uid).update(obj)
+  .then(() => {
+    datosPerfil.style.display = 'block'
+    formularioPerfil.style.display = 'none'
+  })
+  .catch((err) => {
+    console.log('Error ',err)
+  })
+}

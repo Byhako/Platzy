@@ -27,3 +27,35 @@
   font-size: 15px;
   font-weight: bold;
 }
+
+.tabla {
+  border: 1px solid #0F0342;
+  margin: 20px;
+  padding: 0 20px;
+}
+
+.contenedor label {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.contenedor h3 {
+  font-weight: normal;
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#formularioPerfil {
+  border: 1px solid #0F0342;
+  margin: 20px;
+  padding: 0 20px;
+}
+
+.direccion {
+  color: #0F0342;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 7px auto;
+}
