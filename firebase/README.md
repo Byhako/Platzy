@@ -100,5 +100,64 @@ un nodo en especifico donde:
 tambien podemos especificar el uid con el que deseamos crear el nuevo nodo
 usando el mismo metodo child(uid).
 
-+ 
++ El metodo **set** sirve para sobreescribir la informacion, borra todo lo que esta en el node ref, y escribe la nueva informacion.
 
+## Leer informacion de la base de datos.
+
+El metodo *once*, lee la informacion de fribase cada vez que nosotros
+actualizamos la pagina, si no se actualiza, aunque la informacion
+cambie en la base de datos, la pagina no actualiza sola. El metodo
+*on*, es un escuchador permanente, cada vez que cambia la informacion
+en la base de datos, se actuliza en los dispositivos.
+
+
+## Reglas de seguridad.
+
+{
+  "rules": {
+    "usuario": {
+      "$uid": {    // su propio nodo
+        ".read": "$uid == auth.uid",   // si esta autenticado
+        ".write": "$uid == auth.uid"   // si esta autenticado
+      }
+    }
+  }
+}
+
+".write": "root.child('admin').hasChild(auth.uid)",
+en la raiz de la base da datos, en el nodo de admin, tiene que exisite el
+usuarion con uid dado.
+
+{
+  "rules": {
+    "usuario": {
+      "$uid": {    // su propio nodo
+        ".read": true,
+        ".write": "root.child('admin').hasChild(auth.uid)",
+      }
+    },
+    "admin": {
+      "":""
+    },
+    "records": {
+      ".indexOn": "tiempo",  //indexa u ordena datos
+      ".validate": "newData.val().contains('s')",   // para validar datos
+      ".validate": "newData.val().isBoolean",
+      ".validate": "newData.val().isString",
+      ".validate": "newData.val().matches()"
+    }
+  }
+}
+
+los datos nuevos deben contener una "s" para se validados.
+
+### Obtener url del storege
+
+imgref.child(img).getDownloadURL()
+  .then((url) => {
+    imgURL = url
+  })
+
+## Hosting
+
+firebase deploy

@@ -140,15 +140,19 @@ en la base de datos, se actuliza en los dispositivos.*/
 function leerInfo (uid) {
   ref.child(uid).on('value', (data) => {
     const dat = data.val()
-    llenarInfo(data.nombre, data.email, data.telefono, data.direccion)
+    llenarInfo(dat.nombre, dat.email, dat.telefono, dat.direccion)
   })
 }
 
 function llenarInfo (nombre, email, telefono, direccion) {
   perfilNombre.innerHTML = nombre
   perfilEmail.innerHTML = email
-  perfilTelefono.innerHTML = telefono
-  perfilDireccion.innerHTML = direccion.calle + ', ' + direccion.interior
+  perfilTelefono.innerHTML = telefono || 'sin numero'
+  var dir = 'sin direccion'
+  if (direccion) {
+    dir = direccion.calle
+  }
+  perfilDireccion.innerHTML = dir
 }
 
 btnEditar.addEventListener('click', () => {
