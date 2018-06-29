@@ -85,5 +85,20 @@ $ firebase serve
 + Cada base de datos tiene sus peculiaridades y métodos (Firebase, Mongo, etc).
 
 
+### Metodos para agregar a la base de datos.
 
++ El metodo **push**, genera un nuevo nodo CON un nuevo uid con cada click dentro 
+del nodo que tenga como referencia.
+
++ El metodo **update**, genera un nuevo nodo SIN un nuevo uid con cada click dentro 
+del nodo que tenga como referencia, o actualiza la informacion 
+si el nodo ya exite.  Con el metodo child() podemos actualizar
+un nodo en especifico donde: 
+
+  refTest.child('uid').update(newObj)
+
+tambien podemos especificar el uid con el que deseamos crear el nuevo nodo
+usando el mismo metodo child(uid).
+
++ 
 

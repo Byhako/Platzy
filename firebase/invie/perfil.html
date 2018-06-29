@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/invie.css"/>
+    <link rel="stylesheet" href="css/perfil.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
   </head>
   <body class="precios">
@@ -29,7 +30,17 @@
         </nav>
       </div>
     </header>
-    <section class="tabla datosPerfil" id="datosPerfil">
+
+    <div class="botones">
+      <div class="title">Agregar a base de datos usando el metodo:</div>
+      <div class="containerBotons">
+        <button class="myBoton" id="btn-push">Push</button>
+        <button class="myBoton" id="btn-update">Update</button>
+        <button class="myBoton" id="btn-set">Set</button>
+        <button class="myBoton" id="btn-delete">Delete</button>
+      </div>
+    </div>
+<!--     <section class="tabla datosPerfil" id="datosPerfil">
       <div class="contenedor">
         <h1>Tu Perfil</h1>
         <label for="perfilNombre">Nombre</label>
@@ -42,7 +53,7 @@
         <h3 id="perfilDireccion"></h3>
         <button id="perfilEditar">Editar</button>
       </div>
-    </section>
+    </section> -->
     <section class="formularioPerfil" onsubmit="editarDatos()" id="formularioPerfil" style="display:none">
 
       <div class="contenedor">
@@ -149,7 +160,7 @@
     </script>
 <!-- -------------- End Firebase  --------------- -->
 
-    <script type="text/javascript" src="./js/perfil.js"></script>
+    <script type="text/javascript" src="./js/nuevo.js"></script>
 
     <script>
       var consulta = window.matchMedia('(max-width: 500px)');

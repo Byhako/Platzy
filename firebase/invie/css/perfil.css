@@ -1,0 +1,29 @@
+.botones {
+  display: block;;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.title {
+  margin-left: 30px;
+  font-size: 25px;
+  color: purple;
+  margin-bottom: 15px;
+}
+
+.containerBotons {
+  display: flex;
+}
+
+.myBoton {
+  display: block;
+  height: 40px;
+  width: 100px;
+  background-color: #6A4BE880;
+  border-radius: 5px;
+  margin: 10px auto;
+  color:#0F0342;
+  font-size: 15px;
+  font-weight: bold;
+}
