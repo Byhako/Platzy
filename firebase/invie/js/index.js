@@ -7,7 +7,6 @@ const btnLogout = document.getElementById('logout')
 const btnPerfil = document.getElementById('perfil')
 
 
-
 var usuario = {}
 
 //*****************************************************
@@ -28,11 +27,11 @@ firebase.auth().onAuthStateChanged((user) => {
 
 btnLogin.addEventListener('click', () => {
   event.preventDefault()
-  // var provider = new firebase.auth.GoogleAuthProvider()
-  var provider = new firebase.auth.FacebookAuthProvider()
+  var provider = new firebase.auth.GoogleAuthProvider()
+  // var provider = new firebase.auth.FacebookAuthProvider()
 
-  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
-  provider.addScope('public_profile')
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+  // provider.addScope('public_profile')
 
   firebase.auth().signInWithPopup(provider)
   .then((datosUser) => {
@@ -61,6 +60,7 @@ function addUser(usuario, uid) {
   ref.child(uid).update(usuario)
 }
 
+//-----------  AGREGAR GUITARRAS  -------------------------------
 function leerGuitarras () {
   refGuitarras.child('vip').on('child_added', (datos) => {
     console.log('vip', datos.val())
@@ -84,7 +84,7 @@ function leerguitarrasVip () {
     console.log(datos.key, guitar.nombre, guitar.precio, guitar.descripcion, guitar.metadata)
     contenedorElementos.insertBefore(
       crearElementoGuitarra(datos.key, guitar.nombre, guitar.precio, guitar.descripcion, guitar.img),
-        contenedorElementos.firsChild
+        contenedorElementos.firstChild
       )
   } )
 }
@@ -108,15 +108,16 @@ function crearElementoGuitarra(key, nombre, precio, descripcion, img) {
   // Create the DOM element from the HTML
   const div = document.getElementById('div')
   div.innerHTML = html
-  const guitarElement = div.firsChild
-  const imgURL = ""
+
+  const guitarElement = div.firstChild
+  var imgURL = ""
   imgref.child(img).getDownloadURL().then((url) => {
     imgURL = url
   }).then(() => {
-    guitarElement.getElementByClassName('title-b')[0].innerText = nombre
-    guitarElement.getElementByClassName('precio-b')[0].innerText = precio
-    guitarElement.getElementByClassName('descripcion-b')[0].innerText = descripcion
-    guitarElement.getElementByClassName('derecha')[0].src = imgURL
+    guitarElement.getElementsByClassName('title-b')[0].innerText = nombre
+    guitarElement.getElementsByClassName('precio-b')[0].innerText = precio
+    guitarElement.getElementsByClassName('descripcion-b')[0].innerText = descripcion
+    guitarElement.getElementsByClassName('derecha')[0].src = imgURL
   })
   return guitarElement
 }
