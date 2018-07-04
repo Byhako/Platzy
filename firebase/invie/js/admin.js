@@ -1,13 +1,13 @@
 const ref = firebase.database().ref("usuario")
 const refGuitarras = firebase.database().ref("guitarras")
 
+const btnLogout = document.getElementById('logout')
 const nombre = document.getElementById('nombre')
 const precio = document.getElementById('precio')
 const descripcion = document.getElementById('descripcion')
 const tipo = document.getElementById('tipo')
 const imagen = document.getElementById('img')
 
-console.log(imagen)
 var usuario = {}
 
 
@@ -36,8 +36,6 @@ function nuevaGuitarra () {
     img: imagen.value
   }
 
-  console.log(obj)
-
   if (obj.tipo == "normal") {
     subirGuitarra(obj, 'normal')
   }
@@ -51,4 +49,17 @@ function nuevaGuitarra () {
 
 function subirGuitarra (guitarra, tipo) {
   refGuitarras.child(tipo).push(guitarra)
+  .then((data) => {
+    console.log('Datos enviados ',data)
+  })
+  .catch((err) => {
+    alert(err)
+  })
 }
+
+// Logout Button
+btnLogout.addEventListener('click', function(event){
+    event.preventDefault()
+    firebase.auth().signOut()
+    console.log('logout success')
+})

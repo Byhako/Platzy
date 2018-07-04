@@ -196,6 +196,21 @@ input:focus, textarea:focus {
   text-decoration: none;
 }
 
+#loginFace {
+  background-color: #3b5998;
+  border-radius: 5px;
+  border: 1px solid #3b5998;
+  padding-right: 10px;
+}
+
+#loginGoogle {
+  background-color: #EF2929;
+  border-radius: 5px;
+  border: 1px solid #EF2929;
+  padding-right: 10px;
+}
+
+
 .logotipo {
   display: inline-block;
   margin-left: 0;
