@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+.registrar {
+  display: inline-block;
+  width: auto;
+  padding: 15px;
+}
+.divider {
+  border-right: 1px dashed black;
+  width: 100px;
+  height: 230px;
+  margin-right: 100px;
+}
+.titleRegistrar {
+  font-size: 22px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  color:#273b47;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+input {
+  font-size: 20px;
+}

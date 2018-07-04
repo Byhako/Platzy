@@ -3,6 +3,7 @@ const imgref = firebase.storage().ref()
 const refGuitarras = firebase.database().ref("guitarras")
 
 const btnLoginface = document.getElementById('loginFace')
+const btnLogin = document.getElementById('login')
 const btnLogingoogle = document.getElementById('loginGoogle')
 const btnLogout = document.getElementById('logout')
 const btnPerfil = document.getElementById('perfil')
@@ -17,11 +18,13 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     btnLoginface.style.display = "none"
     btnLogingoogle.style.display = "none"
+    btnLogin.style.display = "none"
     btnLogout.style.display = "inline-block"
     btnPerfil.style.display = "inline-block"
     admin.style.display = "inline-block"
     }
   else{
+    btnLogin.style.display = "inline-block"
     btnLoginface.style.display = "inline-block"
     btnLogingoogle.style.display = "inline-block"
     btnLogout.style.display = "none"
@@ -42,6 +45,7 @@ btnLogingoogle.addEventListener('click', (event) => {
 
   firebase.auth().signInWithPopup(provider)
   .then((datosUser) => {
+    console.log(datosUser.user)
     usuario = {
       nombre: datosUser.user.displayName,
       email: datosUser.user.email,
