@@ -4,7 +4,10 @@
     <title>Registrate</title>
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="./favicon.png" />
+
     <link rel="stylesheet" href="css/invie.css"/>
+    <link rel="stylesheet" href="css/perfil.css"/>
     <link rel="stylesheet" href="css/registro.css"/>
   </head>
   <body>
@@ -31,29 +34,34 @@
         <div class="titleRegistrar">Registrate</div>
         <form action="">
           <div>
-            <div class='label' for="emal">Email:</div class='label'>
-            <input type="text" id="email" required>
+            <div class='label' for="emalReg">Email:</div class='label'>
+            <input type="text" id="emailReg" required>
           </div>
           <div>
-            <div class='label' for="password">Contraseña:</div class='label'>
-            <input type="text" id="password" required>
+            <div class='label' for="passwordReg">Contraseña:</div class='label'>
+            <input type="password" id="passwordReg" required>
           </div>
         </form>
+        <button class="myBoton" id="btnRegistrar">Registrarse</button>
       </div>
+
       <div class="divider"></div>
+
       <div class="registrar">
         <div class="titleRegistrar">Ingresa</div>
         <form action="">
           <div>
-            <div class='label' for="emal">Email:</div class='label'>
-            <input type="text" id="email" required>
+            <div class='label' for="emalIng">Email:</div class='label'>
+            <input type="text" id="emailIng" required>
           </div>
           <div>
-            <div class='label' for="password">Contraseña:</div class='label'>
-            <input type="text" id="password" required>
+            <div class='label' for="passwordIng">Contraseña:</div class='label'>
+            <input type="password" id="passwordIng" required>
           </div>
         </form>
+        <button class="myBoton" id="btnIngresar">Ingresar</button>
       </div>
+
     </div>
 
 
@@ -86,7 +94,7 @@
                 <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
               </label>
               <label for="comentarios">
-                <input type="checkbox" id="comentarios" name="intereses" value="comantarios"> Comentarios
+                <input type="checkbox" id="comentarios" name="intereses" value="comentarios"> Comentarios
               </label>
               <label for="otros">
                 <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
@@ -95,11 +103,34 @@
           </div>
           <div class="col2">
             <label for="comentarios">Comentarios</label>
-            <textarea name="comantarios" id="comentarios" cols="30" rows="7"></textarea>
+            <textarea name="comentarios" id="comentario" cols="30" rows="7"></textarea>
             <input type="submit" value="Enviar" class="button"/>
           </div>
         </form>
       </div>
     </footer>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js'></script>
+
+     <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+
+<!-- -------------- Initialize Firebase  --------------- -->
+    <script>
+      var config = {
+        apiKey: "AIzaSyDHqes8FgeZYWwWnO19Tid4Ut8N_NkPwvc",
+        authDomain: "platzi-invie-7d300.firebaseapp.com",
+        databaseURL: "https://platzi-invie-7d300.firebaseio.com",
+        projectId: "platzi-invie-7d300",
+        storageBucket: "platzi-invie-7d300.appspot.com",
+        messagingSenderId: "974737102767"
+      };
+      firebase.initializeApp(config);
+    </script>
+<!-- -------------- End Firebase  --------------- -->
+
+    <script type="text/javascript" src="./js/registrar.js"></script>
+
   </body>
 </html>
