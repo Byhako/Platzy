@@ -45,11 +45,13 @@ btnLogingoogle.addEventListener('click', (event) => {
 
   firebase.auth().signInWithPopup(provider)
   .then((datosUser) => {
-    console.log(datosUser.user)
+    console.log('datosUser',datosUser)
+    // const user = firebase.auth().currentUser
     usuario = {
       nombre: datosUser.user.displayName,
       email: datosUser.user.email,
-      uid: datosUser.user.uid
+      uid: datosUser.user.uid,
+      token: datosUser.credential.idToken
     }
     console.log(usuario)
     addUser(usuario, usuario.uid)
@@ -74,6 +76,7 @@ btnLoginface.addEventListener('click', (event) => {
 
   firebase.auth().signInWithPopup(provider)
   .then((datosUser) => {
+    console.log('datosUser',datosUser)
     usuario = {
       nombre: datosUser.user.displayName,
       email: datosUser.user.email,
