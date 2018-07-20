@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export default class extends Component {
   static async getInitialProps ({query}) {
     let idChannel = query.id
+
     let reqChannel = await fetch(`https://api.audioboom.com/channels/${idChannel}`)
     let dataChannel = await reqChannel.json()
     let channel = dataChannel.body.channel
