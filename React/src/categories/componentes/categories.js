@@ -7,6 +7,7 @@ function Categories(props){
   return(
     <div className="Categories">
       <SearchContainer/>
+      
       {
         props.categories.map((item)=>{
           return (
@@ -16,7 +17,7 @@ function Categories(props){
               handleOpenModal={props.handleOpenModal}
             />
           )
-        }) 
+        })
       }
     </div>
   )

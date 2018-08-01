@@ -25,11 +25,15 @@ body {
 }
 .home-featuring {
   grid-area: featuring;
-  display: grid;
+  display: none;
 }
 .home-featuring img {
   align-self: center;
   justify-self: center;
+}
+
+.imgLoader {
+  margin-left: 150px;
 }
 
 /*Sidebar*/
