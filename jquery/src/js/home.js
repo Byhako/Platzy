@@ -86,6 +86,8 @@ fetch('https://randomuser.me/api')
   const $modalTitle = $modal.querySelector('h1')
   const $modalImage = $modal.querySelector('img')
   const $modalDescription = $modal.querySelector('p')
+  
+  const BASE_API = 'https://yts.am/api/v2/list_movies.json?'
 
   function setAttributes (element, attributes) {
     for (const attribute in attributes) {
@@ -93,47 +95,12 @@ fetch('https://randomuser.me/api')
     }
   }
 
-// ---------------------------------
-//          ASINCRONAS
-// ---------------------------------
   async function getData(url) {
     const response = await fetch(url)
     const data = await response.json()
-    return data
-  }
-
-  const BASE_API = 'https://yts.am/api/v2/list_movies.json?'
-
-  const actionList = await getData(`${BASE_API}genre=action`)
-  console.log('action',actionList)
-  const dramaList = await getData(`${BASE_API}genre=drama`)
-  console.log('drama',dramaList)
-  const animationList = await getData(`${BASE_API}genre=animation`)
-  console.log('animation',animationList)
-
-  /*
-  let terrorList
-  getData('https://yts.am/api/v2/list_movies.json?genre=horror')
-    .then((res) => {
-      console.log('terror',res)
-      terrorList = res
-    })
-  */
-  
-  function featuringTemplate (peli) {
-    return (
-      `
-      <div class="featuring">
-        <div class="featuring-image">
-          <img src="${peli.medium_cover_image}" width="70" height="100" alt="">
-        </div>
-        <div class="featuring-content">
-          <p class="featuring-title">Pelicula encontrada</p>
-          <p class="featuring-album">${peli.title}</p>
-        </div>
-      </div>
-      `
-    )
+    if (data.data.movie_count > 0) {
+      return data
+    }
   }
 
   $form.addEventListener('submit', async (event) => {
@@ -158,20 +125,44 @@ fetch('https://randomuser.me/api')
     $featuring.append($loader)
 
     const data = new FormData($form)
-    // const peli = await getData(`${BASE_API}limit=1&query_term=${data.get('name')}`)
-    // peli.data.movies[0]
 
-    // DESESTRUCTURACION DE OBJETOS
-    const { data: { movies: pelis 
-      } } = await getData(`${BASE_API}limit=1&query_term=${data.get('name')}`)
-    
-    const HTMLString = featuringTemplate(pelis[0])
-    $featuringContainer.innerHTML = HTMLString
+    try {
+      // const peli = await getData(`${BASE_API}limit=1&query_term=${data.get('name')}`)
+      // peli.data.movies[0]
+      // DESESTRUCTURACION DE OBJETOS
+      const { data: { movies: pelis 
+        } } = await getData(`${BASE_API}limit=1&query_term=${data.get('name')}`)
+      
+      const HTMLString = featuringTemplate(pelis[0])
+      $featuringContainer.innerHTML = HTMLString
+
+    } catch (error) {
+      alert('Pelicula no encontrada.')
+      $loader.remove()
+      $home.classList.remove('search-active')
+    }
+
   })
 
   // ---------------------------------
   //          TEMPLATES
   // ---------------------------------
+
+  function featuringTemplate (peli) {
+    return (
+      `
+      <div class="featuring">
+        <div class="featuring-image">
+          <img src="${peli.medium_cover_image}" width="70" height="100" alt="">
+        </div>
+        <div class="featuring-content">
+          <p class="featuring-title">Pelicula encontrada</p>
+          <p class="featuring-album">${peli.title}</p>
+        </div>
+      </div>
+      `
+    )
+  }
 
   function videoItemTemplate(movie, category) {
     return (
@@ -200,10 +191,28 @@ fetch('https://randomuser.me/api')
       const htmlString = videoItemTemplate(movie, category)
       const movieElement = createTemplate(htmlString)
       container.append(movieElement)
+      const image = movieElement.querySelector('img')
+
+      image.addEventListener('load', (event) => {
+        event.srcElement.classList.add('fadeIn')
+      })
+
       movieElement.addEventListener('click', () => {
         showModal(movieElement)
       })
     })
+  }
+
+  function findById (list, id) {
+    return list.find( movie => movie.id === parseInt(id) )
+  }
+
+  function findMovie (id, category) {
+    switch (category) {
+      case 'action': { return findById(actionList, id) }
+      case 'drama': { return findById(dramaList, id) }
+      default: { return findById(animationList, id) }
+    }
   }
 
   function showModal (elemento) {
@@ -211,6 +220,11 @@ fetch('https://randomuser.me/api')
     $modal.style.animation = 'modalIn 0.8s forwards'
     const id = elemento.dataset.id
     const category = elemento.dataset.category
+    const data = findMovie(id, category)
+
+    $modalTitle.textContent = data.title
+    $modalImage.setAttribute('src', data.medium_cover_image)
+    $modalDescription.textContent = data.description_full
   }
 
   $hideModal.addEventListener('click', () => {
@@ -218,9 +232,30 @@ fetch('https://randomuser.me/api')
     $overlay.classList.remove('active')
   })
 
-  renderMovieList(actionList.data.movies, $actionContainer, 'action')
-  renderMovieList(dramaList.data.movies, $dramaContainer, 'drama')
-  renderMovieList(animationList.data.movies, $animationContainer, 'animation')
+  const {data: {movies: actionList}} = await getData(`${BASE_API}genre=action`)
+  window.localStorage.setItem('actionList',JSON.stringify(actionList))
+  console.log('action',actionList)
+  renderMovieList(actionList, $actionContainer, 'action')
+
+  const {data: {movies: dramaList}} = await getData(`${BASE_API}genre=drama`)
+  window.localStorage.setItem('dramaList',JSON.stringify(dramaList))
+  console.log('drama',dramaList)
+  renderMovieList(dramaList, $dramaContainer, 'drama')
+  
+  const {data: {movies: animationList}} = await getData(`${BASE_API}genre=animation`)
+  window.localStorage.setItem('animationList',JSON.stringify(animationList))
+  console.log('animation',animationList)
+  renderMovieList(animationList, $animationContainer, 'animation')
+
+  /*
+  let terrorList
+  getData('https://yts.am/api/v2/list_movies.json?genre=horror')
+    .then((res) => {
+      console.log('terror',res)
+      terrorList = res
+    })
+  */
+
 
 })()
 
