@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" name='nombre' v-model='nombre'>
+    <p>Hola amigo {{ nombre | upperCase}}</p>
+
+<!-- ************************************************************* -->
+    <form v-on:submit.prevent='submit' action="" method="get">
+      <h2>Cual es tu color favorito?</h2>
+      
+      <input v-model='colores' type="checkbox" id='negro' value='negro'>
+      <label for="negro">Negro</label>
+      
+      <input v-model='colores' type="checkbox" id='azul' value='azul'>
+      <label for="azul">Azul</label>
+      
+      <input v-model='colores' type="checkbox" id='rojo' value='rojo'>
+      <label for="rojo">Rojo</label>
+      
+      <button type="submit">Enviar</button>
+    </form>
+<!-- ************************************************************* -->
+
+    <form v-on:submit.prevent='submitCursos' action="" method="get">
+      <h2>Cuales son tus cursos?</h2>
+
+      <template v-for='c in cursos'>
+        <Cursos
+          v-bind:curso='c'
+          v-on:checked='selectCurso'
+          />
+      </template>
+
+      <button type="submit">Enviar</button>
+    </form>
+<!-- ************************************************************* -->
+
+
+
+
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component ('Cursos', {
+      props: ['curso'],
+      methods: {
+        onChange (event) {
+          this.$emit('checked', this.curso.value, event.target.checked)
+        }
+      },
+      template: 
+      `
+      <div>
+        <input 
+          type="checkbox"
+          v-bind:id='curso.value'
+          v-bind:value='curso.value'
+          @change='onChange'
+        >
+        <label v-bind:for="curso.value">{{ curso.nombre }}</label>
+      </div>
+      `
+    })
+
+    let app = new Vue({
+      el: '#app',
+      data: {
+        nombre: '',
+        colores: [],
+        cursos: [
+          {nombre: 'React', value:'react'},
+          {nombre: 'Vue', value:'vue'},
+          {nombre: 'Angular', value:'angular'},
+          {nombre: 'Redux', value:'redux'}
+        ],
+        cursosSelect: []
+      },
+      filters: {
+        upperCase (str) { return str.toUpperCase()}
+      },
+      methods: {
+        submit () { console.log('Colores: ',this.colores)},
+        submitCursos () {console.log('Cursos: ',this.cursosSelect)},
+        selectCurso (curso, checked) {
+          if (checked) {
+            this.cursosSelect.push(curso)
+          } else {
+            const idx = this.cursosSelect.indexOf(curso)
+            this.cursosSelect.splide(idx,1)
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
