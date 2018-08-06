@@ -3,12 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Curso Vue</title>
+  <style>
+    form {
+      margin: 30px auto;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    Hola {{ nombre }}
-    <a v-bind:href="url" target='_blank'>{{ pagina }}</a>
-    <a :href="url" target='_blank'>{{ pagina }}</a>
+    <template v-if="mostrar">
+      <h1>{{ Titulo | uppercase }}</h1>
+      <h2>{{ subtitulo | lowercase }}</h2>
+      <!-- <a v-bind:href="url" target='_blank'>{{ pagina }}</a> -->
+      <a :href="url" target='_blank'>{{ pagina }}</a>
+      <p>El contador está en {{ contador }}</p>
+      <button v-on:click='sumar'>Sumar 1</button>
+      <button @click='restar'>Restar 1</button>
+    </template>
+
+    <form action="">
+      <input type="text" name='nombre' placeholder="Nombre" v-model='nombre'>
+    </form>
+    <h3>Hola {{ nombre | uppercase }}</h3>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,9 +32,21 @@
     let app = new Vue({
       el: '#app',
       data: {
-        nombre: 'Ruben',
         url: 'https://google.com',
-        pagina: 'Ir a google'
+        pagina: 'Ir a google',
+        mostrar: true,
+        Titulo: 'Curso de Vue.js',
+        subtitulo: 'de Platzi',
+        contador: 0,
+        nombre: ''
+      },
+      filters: {
+        uppercase: function (str) { return str.toUpperCase()},
+        lowercase: function (str) { return str.toLowerCase()}
+      },
+      methods: {
+        sumar: function () {this.contador++},
+        restar () {this.contador--}
       }
     })
   </script>
