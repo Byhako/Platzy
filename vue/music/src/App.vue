@@ -16,10 +16,15 @@
           <a href="#" class="button is-danger is-large">&times;</a>
         </div>
       </nav>
+      
+      <div class="container">
+        <p small>{{ searchM }}</p>
+      </div>
 
       <div class="container">
         <div class="columns">
-          <div class="column" v-for="t in pistas">{{ t.name }}</div>
+          <div class="column" v-for="t in pistas">{{ t.name }} 
+          - {{ t.artists[0].name }}</div>
         </div>
       </div>
     </section>
@@ -27,11 +32,7 @@
 </template>
 <!-- ******************************************************* -->
 <script>
-const pistas = [
-  {name: 'muchacha', artist: 'Luis'},
-  {name: 'corazon', artist: 'Luis'},
-  {name: 'agua', artist: 'Tato'}
-]
+import trackServices from './services/track'
 
 export default {
   name: 'app',
@@ -43,12 +44,16 @@ export default {
   },
   methods: {
     search () {
-      this.pistas = pistas
+      if (!this.searchQuery) { return }
+      trackServices.search(this.searchQuery)
+        .then(res => {
+          this.pistas = res.tracks.items
+        })
     }
   },
   computed: {
     searchM () {
-      return `Encontrados: ${this.pistas.lenght}`
+      return `Encontrados: ${this.pistas.length}`
     }
   }
 }
