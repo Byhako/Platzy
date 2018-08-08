@@ -10,7 +10,10 @@
             </div>
           </div>
 
-          <div class="navbar-end navbar-menu"></div>
+          <div class="navbar-end navbar-menu">
+            <router-link to="/" class="navbar-item">Buscar</router-link>
+            <router-link to="about" class="navbar-item">Nosotros</router-link>
+          </div>
 
         </div>
       </header>
