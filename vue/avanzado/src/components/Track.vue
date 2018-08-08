@@ -26,8 +26,8 @@
          <small>{{ track.duration_ms }}</small>
          <nav class="level">
            <div class="level-left">
-             <a href="#" class="level-item">
-               <span class="icon is-small"> PLAY</span>
+             <a class="level-item">
+               <span class="icon is-small" @click="selectTrack"> ▶ </span>
              </a>
            </div>
          </nav>
@@ -37,10 +37,15 @@
 </template>
 
 <script>
-
+  console.log(this.props)
   export default {
     props: {
       track: { type: Object, required: true }
+    },
+    methods: {
+      selectTrack () {
+        this.$emit('select', this.track.id)
+      }
     }
   }
 </script>

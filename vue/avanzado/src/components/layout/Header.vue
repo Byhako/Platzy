@@ -1,16 +1,16 @@
 <template>
   <section class="hero is-success">
     <div class="hero-head">
-      <header class="nav">
+      <header class="navbar">
         <div class="container">
           
-          <div class="nav-feft">
-            <div class="nav-item">
+          <div class="navbar-start">
+            <div class="navbar-item">
               <strong>PLATZI MUSIC</strong>
             </div>
           </div>
 
-          <div class="nav-right nav-menu"></div>
+          <div class="navbar-end navbar-menu"></div>
 
         </div>
       </header>
