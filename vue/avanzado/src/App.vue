@@ -84,6 +84,8 @@ export default {
     clear () {
       this.notificationSuccess = false
       this.pistas = []
+      this.$bus.$emit('set-track', {})
+
     }
   },
   computed: {

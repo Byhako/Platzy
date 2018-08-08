@@ -45,6 +45,9 @@
     methods: {
       selectTrack () {
         this.$emit('select', this.track.id)
+
+        // para enviar cancion al componente player
+        this.$bus.$emit('set-track', this.track)
       }
     }
   }
