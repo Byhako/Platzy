@@ -37,7 +37,6 @@
 </template>
 
 <script>
-  console.log(this.props)
   export default {
     props: {
       track: { type: Object, required: true }
