@@ -5,7 +5,7 @@
         <div class="container">
           
           <div class="navbar-start">
-            <div class="navbar-item has-shadow">
+            <div class="navbar-item">
               <strong>♉ PLATZI MUSIC</strong>
             </div>
           </div>

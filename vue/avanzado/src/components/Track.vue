@@ -26,12 +26,12 @@
          <small>{{ track.duration_ms | ms-to-mn }}</small>
          <nav class="level">
            <div class="level-left">
-             <a class="level-item">
+             <button class="level-item button is-primary">
                <span class="icon is-small" @click="selectTrack"> ▶ </span>
-             </a>
-             <a class="level-item">
-               <span class="icon is-small" @click="goToTrack(track.id)"> ⚙ </span>
-             </a>
+             </button>
+             <button class="level-item button is-warning">
+               <span class="icon is-small" @click="goToTrack(track.id)"> ❔ </span>
+             </button>
            </div>
          </nav>
        </div>
@@ -46,6 +46,7 @@
     },
     methods: {
       selectTrack () {
+        if (!this.track.preview_url) { return }
         this.$emit('select', this.track.id)
 
         // para enviar cancion al componente player
@@ -53,6 +54,7 @@
       },
 
       goToTrack (id) {
+        if (!this.track.preview_url) { return }
         this.$router.push({ name: 'track', params: {id} })
       }
     }

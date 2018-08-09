@@ -29,6 +29,7 @@
       <div class="columns is-multiline">
         <div class="column is-one-quarter" v-for="t in pistas" v-bind:key='t.id'>
           <pm-track 
+            v-blur="t.preview_url"
             :track="t"
             @select="setSelectedTrack"
             :class="{'is-active': t.id === selectedTrack}"
