@@ -23,7 +23,7 @@
       </div>
 
        <div class="content">
-         <small>{{ track.duration_ms }}</small>
+         <small>{{ track.duration_ms | ms-to-mn }}</small>
          <nav class="level">
            <div class="level-left">
              <a class="level-item">
