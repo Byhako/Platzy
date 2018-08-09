@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-if="track && track.album">
     <div class="card-image">
       <figure class="image is-1by1">
         <img :src="track.album.images[0].url" alt="">
@@ -29,6 +29,9 @@
              <a class="level-item">
                <span class="icon is-small" @click="selectTrack"> ▶ </span>
              </a>
+             <a class="level-item">
+               <span class="icon is-small" @click="goToTrack(track.id)"> ⚙ </span>
+             </a>
            </div>
          </nav>
        </div>
@@ -47,6 +50,10 @@
 
         // para enviar cancion al componente player
         this.$bus.$emit('set-track', this.track)
+      },
+
+      goToTrack (id) {
+        this.$router.push({ name: 'track', params: {id} })
       }
     }
   }

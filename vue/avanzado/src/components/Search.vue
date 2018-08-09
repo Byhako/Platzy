@@ -1,7 +1,6 @@
 <template>
   <main>
 
-
     <pm-notification v-show="showNotificationError" theme="error">
       <p slot="body">
         No se encontraron resultados. ☹
@@ -12,7 +11,9 @@
       <nav class="navbar">
         <div class="line">
           <input type="text" placeholder="Buscar"
-            class="input is-large" v-model='busqueda'>
+            class="input is-large" v-model='busqueda'
+            v-on:keyup.delete="clear"
+            v-on:keyup.enter="search"> <!--modifiers -->
           <a class="button is-info is-large" @click="search">Buscar</a>
           <a class="button is-danger is-large" @click="clear">&times;</a>
         </div>

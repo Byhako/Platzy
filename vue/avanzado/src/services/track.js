@@ -10,4 +10,9 @@ trackServices.search = function (q) {
     .then(res => res.data)
 }
 
+trackServices.getById = function (id) {
+  return platziMusicService.get(`/tracks/${id}`) // url dinamica
+    .then(res => res.data)
+}
+
 export default trackServices

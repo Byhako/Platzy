@@ -27,4 +27,24 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 + *beforeUpdate:* se ejecuta cuando el data cambia, pero el DOM aun no ha plasmado los cambios.
 + *updated:* se ejecuta después de que el data cambie y el DOM muestre estos cambios.
 + *beforeDestroy:* se ejecuta justo antes de eliminar la instancia.
-+ *destroyed:* se ejecuta cuando la instancia, los eventos, directivas e hijos del componente se han eliminado.
++ *destroyed:* se ejecuta cuando la instancia, los eventos, directivas e hijos del componente se han eliminado. :heart
+
+## Vue-Router
+
+Tiene dos objetos:
+
++ $route: Tiene informacion de la ruta especifica, es decir, informacion como los parametros, la url ...
+
++ $router: Sirve para navegar programaticamente y para acceder a funcionalidades del router.
+
+## Modifiers:
+
++ @keyup.enter
++ @keyup.tab
++ @keyup.delete (captures both “Delete” and “Backspace” keys)
++ @keyup.esc
++ @keyup.space
++ @keyup.up
++ @keyup.down
++ @keyup.left
++ @keyup.right
