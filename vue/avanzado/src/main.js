@@ -6,6 +6,7 @@ import EventBus from '@/plugins/event-bus' // Plugin
 import blur from '@/directives/blur' // Directive
 import msTomn from '@/filters/ms2mn' // Filter
 import routes from '@/routes'
+import store from '@/store'
 
 Vue.use(EventBus)
 Vue.use(blur)
@@ -20,5 +21,6 @@ const router = new VueRouter({
 new Vue({ 
   el: '#app', 
   render: h => h(App),
-  router
+  router,
+  store
  })

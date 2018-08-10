@@ -16,15 +16,17 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
-    data () {
-      return {
-        track: { }
-      }
-    },
-    created () {
+    
+    /*created () {
       // escuchamos el evento
       this.$bus.$on('set-track', track => this.track = track)
+    }*/
+
+    computed: {
+      ...mapState(['track'])
     }
   }
 </script>
@@ -32,5 +34,6 @@
 <style lang="scss" scoped>
 img {
   width: 124px;
+  border-radius: 50%;
 }
 </style>
