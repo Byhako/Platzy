@@ -18,4 +18,12 @@ export default {
 
 <style lang="scss">
 @import '../node_modules/bulma/bulma.sass';
+
+.move-enter-active, .move-leave-active {
+  transform: translateX(0);
+  transition: all 0.3s linear;
+}
+.move-enter, .move-leave-to {
+  transform: translateX(100%);
+}
 </style>

@@ -1,11 +1,13 @@
 <template>
   <main>
 
-    <pm-notification v-show="showNotificationError" theme="error">
-      <p slot="body">
-        No se encontraron resultados. ☹
-      </p>
-    </pm-notification>
+    <transition name="move">
+      <pm-notification v-show="showNotificationError" theme="error">
+        <p slot="body">
+          No se encontraron resultados. ☹
+        </p>
+      </pm-notification>
+    </transition>
 
     <section class="section" >
       <nav class="navbar">
@@ -18,13 +20,17 @@
           <a class="button is-danger is-large" @click="clear">&times;</a>
         </div>
       </nav>
-      
-      <pm-notification v-show="notificationSuccess" theme="success">
-        <p slot="body">{{ searchM }}</p>
-      </pm-notification>
 
-      <pm-loader v-show="isLoading"/>
-      
+      <transition name="move">
+        <pm-notification v-show="notificationSuccess" theme="success">
+          <p slot="body">{{ searchM }}</p>
+        </pm-notification>
+      </transition>
+
+      <transition name="move">
+        <pm-loader v-show="isLoading"/>
+      </transition>
+
       <div class="container" v-show="!isLoading">
       <div class="columns is-multiline">
         <div class="column is-one-quarter" v-for="t in pistas" v-bind:key='t.id'>
