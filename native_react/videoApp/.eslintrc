@@ -1,0 +1,6 @@
+{
+  "rules": { 
+    "no-new": 0,
+    "type aliases": 0
+  }
+}

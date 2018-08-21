@@ -12,7 +12,16 @@ http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html
 
 + Android Studio
 Descargar el .zip
+https://developer.android.com/studio/
 Descomprimir en la ruta de instalación
-… yo uso /usr/share/android-studio en modo $ … sin root.
-Ejecutar el archivo: studio.sh que está en la carpeta bin del directorio de instalación.
-listo, seguir las instrucciones.
+https://linuxconfig.org/how-to-install-android-studio-on-debian-9-stretch-linux
+
+lo mueves a /opt/  y lo ejecutas "NO COMO ROOT"
+
+Luego abre el proyecto creado con react-native, la carpeta de android, y desde allí te dara las opciones para aceptar todas las condanadas lisencias y demas cosas.
+
+instalar KVM:
+https://proyectosbeta.net/2017/10/instalar-kvm-en-debian-stretch/
+
++ Geanymotion
+recuerda ir a settings/ADB y elegir *use custom Android SDK tools* y elige el sdk que deberia estar en algo como /home/user/Android/SDK
