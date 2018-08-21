@@ -9,10 +9,14 @@ import API from './utils/api'
 
 //type Props = {}
 export default class App extends Component {
+  state = {
+    suggestionsList: []
+  }
 
   async componentDidMount () {
     const movies = await API.getSuggestion(10)
     console.log('m:', movies)
+    this.setState({suggestionsList: movies})
   }
 
   render() {
@@ -20,8 +24,10 @@ export default class App extends Component {
       <Home>
         <Header />
         <Text>Buscador</Text>
-        <Suggestions />
         <Text>categoria</Text>
+        <Suggestions 
+          list={this.state.suggestionsList}
+        />
       </Home>
     )
   }
