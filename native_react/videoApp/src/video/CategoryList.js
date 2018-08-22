@@ -20,6 +20,7 @@ export default class CategoryList extends Component {
         ListEmptyComponent={this.renderEmpty}
         ItemSeparatorComponent={this.itemSeparator}
         renderItem={this.renderItem}
+        horizontal
       />
     )
   }
