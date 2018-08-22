@@ -10,13 +10,11 @@ export default class Suggestions extends Component {
 
   renderEmpty = () => <Empty text='No hay sugerencias.' />
   itemSeparator = () => <Separator color='#b9f182' />
-  renderItem = ({item}) => (
-     <Suggestion {...item} />
-  )
-
+  renderItem = ({item}) => <Suggestion {...item} />
+  keyExtractor = item => item.id.toString()
+  
   render() {
 
-    keyExtractor = item => item.id.toString()
 
     return (
       <Layout
