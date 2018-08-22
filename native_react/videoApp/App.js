@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {StyleSheet, Text} from 'react-native'
+import {StyleSheet, Text, ActivityIndicator, View} from 'react-native'
 
 import Home from './src/screems/Home'
 import Header from './src/sections/Header'
@@ -10,13 +10,17 @@ import API from './utils/api'
 //type Props = {}
 export default class App extends Component {
   state = {
-    suggestionsList: []
+    suggestionsList: [],
+    loadding: true
   }
 
   async componentDidMount () {
     const movies = await API.getSuggestion(10)
     console.log('m:', movies)
-    this.setState({suggestionsList: movies})
+    this.setState({
+      suggestionsList: movies,
+      loadding: false
+    })
   }
 
   render() {
@@ -25,14 +29,25 @@ export default class App extends Component {
         <Header />
         <Text>Buscador</Text>
         <Text>categoria</Text>
-        <Suggestions 
-          list={this.state.suggestionsList}
-        />
+        {
+          this.state.loadding ?
+          <View>
+            <ActivityIndicator size='large' color='#BE2EE2' />
+            <Text style={styles.cargando}>Cargando</Text>
+          </View>
+          :
+            <Suggestions list={this.state.suggestionsList} />
+        
+        }
       </Home>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  
+  cargando: {
+    fontSize: 20,
+    color: '#BE2EE2',
+    textAlign: 'center'
+  }
 })
