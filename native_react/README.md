@@ -25,3 +25,24 @@ https://proyectosbeta.net/2017/10/instalar-kvm-en-debian-stretch/
 
 + Geanymotion
 recuerda ir a settings/ADB y elegir *use custom Android SDK tools* y elige el sdk que deberia estar en algo como /home/user/Android/SDK
+
+## Nuevo proyecto 
+
++ react-native -v
+
+Inicialización de proyecto con React Native:
++ react-native init NombreDelProyecto
+
+Correr el emulador en Android:
++ react-native run-android
+
+Correr el emulador en iOS:
++ react-native run-ios
+
+## Plugins
+
+Cuando traemos componente externos, deben ser enlazados a nuestro proyecto despues de instalarlos.  Esto lo podemos hacer con
+
+  `react-native link react-native-video`
+
+como ejemplo de ese componente.
