@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, ActivityIndicator } from 'react-native'
 import Video from 'react-native-video'
+import Controls from './Controls'
 
 export default class extends Component {
   state = {
-    loadding: true
+    loadding: true,
+    paused: false
   }
 
   onBuffer = ({ isBuffering }) => this.setState({loadding: isBuffering})  
 
   onLoad = () => this.setState({loadding: false})
+
+  playPause = () => {
+    this.setState({paused: !this.state.paused})
+  }
 
   render () {
     return (
@@ -21,6 +27,7 @@ export default class extends Component {
             resizeMode="contain"
             onBuffer={this.onBuffer}  // ios
             onLoad={this.onLoad}
+            paused={this.state.paused}
           />
         </View>
         {this.state.loadding &&
@@ -28,8 +35,12 @@ export default class extends Component {
             <ActivityIndicator size='large' color='#BE2EE2'/>
           </View>
         }
+        <Controls 
+          playPause={this.playPause}
+          paused={this.state.paused}
+        />
       </View>
-      )
+    )
   }
 }
 
