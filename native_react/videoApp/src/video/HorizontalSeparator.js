@@ -12,7 +12,7 @@ export default function (props) {
 
 const styles = StyleSheet.create({
   separator:{
-    borderTopWidth: 1,
-    marginVertical: 5,
+    marginHorizontal: 5,
+    borderRightWidth: 1,
   }
 })

@@ -18,7 +18,7 @@ export default function Suggestion (props) {
       <View style={styles.right}>
         <Text style={styles.title}> {props.title} </Text>
         <Text style={styles.year}> {props.year} </Text>
-        <Text style={styles.rating}> {props.rating} </Text>
+        <Text style={styles.rating}> {props.rating} Estrellas </Text>
       </View>
     </View>
   )

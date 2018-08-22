@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { FlatList, Text } from 'react-native'
+import { FlatList, Text, StyleSheet, View } from 'react-native'
 
-import Layout from './suggestionListLayout'
 import Empty from './empty'
 import Separator from './VerticalSeparator'
 import Suggestion from './suggestion'
@@ -9,7 +8,7 @@ import Suggestion from './suggestion'
 export default class Suggestions extends Component {
 
   renderEmpty = () => <Empty text='No hay sugerencias.' />
-  itemSeparator = () => <Separator color='#b9f182' />
+  itemSeparator = () => <Separator color='#204A87' />
   renderItem = ({item}) => <Suggestion {...item} />
   keyExtractor = item => item.id.toString()
   
@@ -17,9 +16,9 @@ export default class Suggestions extends Component {
 
 
     return (
-      <Layout
-        title='Recomendado para ti'
-      >
+      <View style={styles.container}>
+        <Text style={styles.title}>Recomendado para ti</Text>
+
         <FlatList
           data={this.props.list}
           keyExtractor={this.keyExtractor}
@@ -27,8 +26,20 @@ export default class Suggestions extends Component {
           ItemSeparatorComponent={this.itemSeparator}
           renderItem={this.renderItem}
         />
-      </Layout>
+      </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 10
+  },
+  title: {
+    color: '#4c4c4c',
+    fontSize: 20,
+    marginBottom: 10,
+    fontWeight: 'bold',
+    marginLeft: 8
+  }
+})
