@@ -33,7 +33,8 @@ export default class Suggestions extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 10
+    paddingVertical: 10,
+    flex: 1
   },
   title: {
     color: '#4c4c4c',

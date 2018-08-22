@@ -3,13 +3,13 @@ import { FlatList, Text, StyleSheet, View, ImageBackground } from 'react-native'
 
 import Empty from './empty'
 import Separator from './HorizontalSeparator'
-import Suggestion from './suggestion'
+import Category from './category'
 
 export default class CategoryList extends Component {
 
   renderEmpty = () => <Empty text='No hay sugerencias.' />
   keyExtractor = item => item.id.toString()
-  renderItem = ({item}) => <Suggestion {...item} />
+  renderItem = ({item}) => <Category {...item} />
   itemSeparator = () => <Separator color='#204A87' />
   
   render () {

@@ -17,7 +17,7 @@ export default class App extends Component {
   }
 
   async componentDidMount () {
-    const movies = await API.getSuggestion(5)
+    const movies = await API.getMovies()//API.getSuggestion(5)
     const categories = await API.getMovies()
     console.log('m:', movies)
     this.setState({
@@ -44,6 +44,7 @@ export default class App extends Component {
             <Suggestions list={this.state.suggestionsList} />
           </View>
         }
+
       </Home>
     )
   }
@@ -56,6 +57,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   container: {
-    height: 200
+    flex: 1
   }
 })
