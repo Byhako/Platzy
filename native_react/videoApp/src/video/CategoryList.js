@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { FlatList, Text, StyleSheet, View, ImageBackground } from 'react-native'
+import { connect } from 'react-redux'
 
 import Empty from './empty'
 import Separator from './HorizontalSeparator'
 import Category from './category'
 
-export default class CategoryList extends Component {
+class CategoryList extends Component {
 
   renderEmpty = () => <Empty text='No hay sugerencias.' />
   keyExtractor = item => item.id.toString()
@@ -44,3 +45,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   }
 })
+
+function mapStateToProps (state, action) {
+  return {
+    
+  }
+}
+
+export default connect(mapStateToProps)(CategoryList)

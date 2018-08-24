@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { FlatList, Text, StyleSheet, View } from 'react-native'
+import { connect } from 'react-redux'
 
 import Empty from './empty'
 import Separator from './VerticalSeparator'
 import Suggestion from './suggestion'
 
-export default class Suggestions extends Component {
+class Suggestions extends Component {
 
   renderEmpty = () => <Empty text='No hay sugerencias.' />
   itemSeparator = () => <Separator color='#204A87' />
@@ -44,3 +45,11 @@ const styles = StyleSheet.create({
     marginLeft: 8
   }
 })
+
+function mapStateToProps (state, action) {
+  return {
+    
+  }
+}
+
+export default connect(mapStateToProps)(Suggestions)

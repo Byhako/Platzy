@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {StyleSheet, Text, ActivityIndicator, View} from 'react-native'
+import { Provider } from 'react-redux'
 
 import Home from './src/screems/Home'
 import Header from './src/sections/Header'
@@ -7,6 +8,7 @@ import Suggestions from './src/video/suggestionsList'
 import Categories from './src/video/CategoryList'
 import Player from './src/player/player'
 import API from './utils/api'
+import store from '/store/store'
 
 //type Props = {}
 export default class App extends Component {
@@ -29,24 +31,26 @@ export default class App extends Component {
 
   render() {
     return (
-      <Home>
-        <Header />
-        <Player />
-        <Text>Buscador</Text>
+      <Provider store={store}>
+        <Home>
+          <Header />
+          <Player />
+          <Text>Buscador</Text>
 
-        {this.state.loadding ?
-          <View>
-            <ActivityIndicator size='large' color='#BE2EE2' />
-            <Text style={styles.cargando}>Cargando</Text>
-          </View>
-          :
-          <View style={styles.container}>
-            <Categories list={this.state.categoryList} />
-            <Suggestions list={this.state.suggestionsList} />
-          </View>
-        }
+          {this.state.loadding ?
+            <View>
+              <ActivityIndicator size='large' color='#BE2EE2' />
+              <Text style={styles.cargando}>Cargando</Text>
+            </View>
+            :
+            <View style={styles.container}>
+              <Categories list={this.state.categoryList} />
+              <Suggestions list={this.state.suggestionsList} />
+            </View>
+          }
 
-      </Home>
+        </Home>
+      </Provider>
     )
   }
 }

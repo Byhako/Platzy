@@ -18,6 +18,13 @@ https://linuxconfig.org/how-to-install-android-studio-on-debian-9-stretch-linux
 
 lo mueves a /opt/  y lo ejecutas "NO COMO ROOT"
 
+
+sudo apt-get install adb
+
+export.ANDROID_HOME=/home/ruben/Android/Sdk
+export PATH="/home/ruben/Android/Sdk/platform-tools":$PATH
+
+
 Luego abre el proyecto creado con react-native, la carpeta de android, y desde allí te dara las opciones para aceptar todas las condanadas lisencias y demas cosas.
 
 instalar KVM:
@@ -39,6 +46,8 @@ Correr el emulador en Android:
 Correr el emulador en iOS:
 + react-native run-ios
 
+react-native start --port=8081
+
 ## Plugins
 
 Cuando traemos componente externos, deben ser enlazados a nuestro proyecto despues de instalarlos.  Esto lo podemos hacer con
@@ -46,3 +55,6 @@ Cuando traemos componente externos, deben ser enlazados a nuestro proyecto despu
   `react-native link react-native-video`
 
 como ejemplo de ese componente.
+
+
+https://facebook.github.io/react-native/docs/getting-started.html
