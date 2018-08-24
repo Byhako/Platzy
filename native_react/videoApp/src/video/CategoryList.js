@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
   }
 })
 
-function mapStateToProps (state, action) {
+function mapStateToProps (state, props) {
   return {
-    
+    list: state.categoryList
   }
 }
 
