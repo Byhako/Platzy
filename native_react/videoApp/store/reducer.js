@@ -6,6 +6,9 @@ export default function videos (state = {}, action) {
     case 'SET_SUGESTION_LIST': {
       return {...state, ...action.suggestionsList}
     }
+    case 'SET_SELECTED_MOVIE': {
+      return {...state, selectedMovie: action.movie}
+    }
     default: {
       return state
     }
