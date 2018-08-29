@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, Image, ActivityIndicator, View} from 'react-native'
 
-export default function loadding (props) {
+export default function loading (props) {
   return (
       <View style={styles.container}>
         <Image
