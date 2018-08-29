@@ -7,6 +7,7 @@ import Movie from './movie'
 import Suggestions from '../video/suggestionsList'
 import Categories from '../video/CategoryList'
 import API from '../../utils/api'
+import Search from '../sections/Search'
 
 class Home extends Component {
   state = {
@@ -36,7 +37,7 @@ class Home extends Component {
       :
         <View>
           <Header />
-          <Text>Buscador</Text>
+          <Search />
 
           {this.state.loadding ?
             <View>
