@@ -37,7 +37,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-      <PersistGate loadding={<Loadding />}>
+      <PersistGate loadding={<Loadding />} persistor={persistor}>
         <Home>
           <Header />
           <Player />
