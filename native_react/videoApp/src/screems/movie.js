@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Header from '../sections/Header'
 import Player from '../player/player'
 import Close from '../sections/Close'
+import Details from '../video/Details'
 
 class Movie extends from component {
   handleClose = () => {
@@ -18,9 +19,15 @@ class Movie extends from component {
           <Close onPres={this.handleClose} />
         </Header>
         <Player />
+        <Details {...this.props.movie}/>
       </Fragment>
     )
   }
 }
 
-export default connect()(Movie)
+function mapStateToProps (state, props) {
+  return {
+    movie: state.selectedMovie
+  }
+}
+export default connect(mapStateToProps)(Movie)
