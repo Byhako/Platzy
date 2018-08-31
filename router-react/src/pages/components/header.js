@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './header.css';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../images/logo.png';
+import { withRouter } from 'react-router'
+// withRouter nos permite tener this.props.history en componentes
+// que no estan dentro de route
 
 class Header extends Component {
   render() {
@@ -42,4 +45,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default withRouter(Header)
