@@ -10,7 +10,7 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { BrowserRouter, Route } from 'react-router-dom'
-
+import NotFound from '../pages/components/NotFound'
 import Header from '../pages/components/header'
 // function logger({ getState, dispatch}) {
 //   return (next) => {
@@ -57,6 +57,7 @@ render(
         <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/videos" component={Videos} />
+        <Route component={NotFound} />
       </Fragment>
     </Provider>
   </BrowserRouter>
