@@ -1,5 +1,6 @@
 + React Native
 npm install -g react-native-cli
+react-native start --reset-cache
 
 + Watchman
 http://www.bravo-kernel.com/2016/11/how-to-install-watchman-on-debian/
