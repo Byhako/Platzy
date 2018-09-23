@@ -28,13 +28,13 @@ export default class extends Component {
         </h1>
 
         <h2>Series</h2>
-        {series.map((serie) => (
-          <div>{serie.title}</div>
+        {series.map((serie, i) => (
+          <div key={i}>{serie.title}</div>
         ))}
 
         <h2>Ultimos Podcats</h2>
-        {audioclips.map((clip) => (
-          <div>{clip.title}</div>
+        {audioclips.map((clip, i) => (
+          <div key={i}>{clip.title}</div>
         ))}
 
 
@@ -56,6 +56,9 @@ export default class extends Component {
             font-weight: 600;
             margin: 0;
             text-align: center;
+          }
+          :global(body) {
+            margin: 0;
           }
         `}</style>
 

@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import 'isomorphic-fetch'
 import Link from 'next/link'
+
+const color = '#fff'
 
 class Home extends Component {
   static async getInitialProps () {
@@ -13,12 +15,12 @@ class Home extends Component {
   render () {
     const { channels } = this.props
     return (
-      <div>
+      <Fragment>
         <header>Podcats</header>
 
         <div className="channels">
           { channels.map((channel, id) => (
-            <Link href={`/channel?id=${channel.id}`} prefetch>
+            <Link href={`/channel?id=${channel.id}`} key={id} prefetch>
             <a className='channel' key={id}> 
               <img src={channel.urls.logo_image.original} alt="logo"/>
               <h2>{channel.title}</h2>
@@ -63,7 +65,7 @@ class Home extends Component {
             background: whitesmoke;
           }
         `}</style>
-      </div>
+      </Fragment>
     )
   }
 }

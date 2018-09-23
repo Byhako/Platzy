@@ -2,6 +2,10 @@
 
 > A Vue.js project
 
+# Inicio
+ + vue-cli:  npm install -g vue-cli
+
+
 ## Build Setup
 
 ``` bash
