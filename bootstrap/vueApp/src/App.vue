@@ -1,12 +1,14 @@
 <template lang="pug">
   #app
-    .alert.alert-primary(role="alert") Un ejemplo de uso de Boostrap 4
-    button.btn.btn-success(type="button") Success
+    grilla
 </template>
 
 <script>
+import grilla from './components/grilla'
+
 export default {
   name: 'app',
+  components: { grilla },
   data () {
     return {
     }
