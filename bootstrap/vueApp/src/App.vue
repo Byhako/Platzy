@@ -1,14 +1,16 @@
 <template lang="pug">
   #app
-    grilla
+    myheader
+    myfooter
 </template>
 
 <script>
-import grilla from './components/grilla'
+import myfooter from './components/Footer.vue'
+import myheader from './components/Header.vue'
 
 export default {
   name: 'app',
-  components: { grilla },
+  components: { myfooter, myheader },
   data () {
     return {
     }
