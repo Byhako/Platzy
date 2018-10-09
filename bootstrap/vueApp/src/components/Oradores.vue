@@ -11,7 +11,10 @@
           .card
             img.card-img-top(:src='sacha', alt='sacha')
             .card-body
-              h5.card-title Sacha Lifszyc
+              h5.card-title.mb-0 Sacha Lifszyc
+              .badges.mb-2
+                span.badge.badge-warning JavaScript
+                span.badge.badge-info React
               p.card-text
                 | Some quick example text to build on the card title and make up the bulk of the card's content.
 
@@ -19,7 +22,10 @@
           .card
             img.card-img-top(:src='leonidas', alt='sacha')
             .card-body
-              h5.card-title Leonidas Esteban.
+              h5.card-title.mb-0 Leonidas Esteban.
+              .badges.mb-2
+                span.badge.badge-success Frontend
+                span.badge.badge-info React
               p.card-text
                 | Some quick example text to build on the card title and make up the bulk of the card's content.
 
@@ -27,7 +33,9 @@
           .card
             img.card-img-top(:src='freddy', alt='sacha')
             .card-body
-              h5.card-title Freddy Vega
+              h5.card-title.mb-0 Freddy Vega
+              .badges.mb-2
+                span.badge.badge-success CEO
               p.card-text
                 | Some quick example text to build on the card title and make up the bulk of the card's content.
 
@@ -35,7 +43,10 @@
           .card
             img.card-img-top(:src='cvander', alt='sacha')
             .card-body
-              h5.card-title Cristian Van Der H.
+              h5.card-title.mb-0 Cristian Van Der H.
+              .badges.mb-2
+                span.badge.badge-warning Cripto-cositas
+                span.badge.badge-info CVNews
               p.card-text
                 | Some quick example text to build on the card title and make up the bulk of the card's content.
 
