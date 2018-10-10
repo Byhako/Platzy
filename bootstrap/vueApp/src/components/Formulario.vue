@@ -7,7 +7,9 @@
           h2 orador
 
       .row
-        .col.text-center Anótate como orador para dar una charla ignite. Cuentanos de qué quieres hablar!
+        .col.text-center Anótate como orador para dar una charla 
+          abbr(title='Charlas de 5 minutos' data-toggle="tooltip") ignite. 
+          | Cuentanos de qué quieres hablar!
 
       .row
         .col.col-md-10.offset-md-1.col-lg-8.offset-lg-2.pt-2
@@ -28,6 +30,26 @@
                 button.btn.btn-platzi.btn-block Enviar
 
 </template>
+
+<script>
+import $ from 'jquery'
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+export default {
+  name: 'formulario',
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+
+  }
+}
+</script>
 
 <style lang="scss">
   .btn-platzi {

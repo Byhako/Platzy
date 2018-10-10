@@ -1,5 +1,5 @@
 <template lang="pug">
-  section#section.mt-4.mb-4
+  section#oradores.mt-4.mb-4
     .container
       .row
         .col.text-center.text-uppercase 
@@ -71,6 +71,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-</style>

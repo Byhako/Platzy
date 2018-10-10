@@ -1,29 +1,26 @@
 <template lang="pug">
-  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark#header
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.sticky-top#header
     .container
-      a.navbar-brand(:href='url1')
+      a.navbar-brand(href='#')
         img(:src="logoPlatzi" alt="logoPlatzi")
         span  Conf Hawaii
       
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      
-      #navbarSupportedContent.collapse.navbar-collapse
+      #navbar.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
-          li.nav-item.active
-            a.nav-link(:href='url1') La Conferencia
+          li.nav-item
+            a.nav-link(href='#main') La Conferencia
           
           li.nav-item
-            a.nav-link(:href='url1') Los Oradores
+            a.nav-link(href='#oradores') Los Oradores
 
           li.nav-item
-            a.nav-link(:href='url1') Lugar y Fecha
+            a.nav-link(href='#place-time') Lugar y Fecha
 
           li.nav-item
-            a.nav-link(:href='url1') Conviertete en Orador
+            a.nav-link(href='#conviertete-en-orador') Conviertete en Orador
 
           li.nav-item
-            a.nav-link.text-platzi(:href='url1') Comprar tickets
+            a.nav-link.text-platzi(href='#' data-toggle="modal" data-target="#ModalCompra") Comprar tickets
 
 </template>
 
@@ -34,8 +31,7 @@ export default {
   name: 'myheader',
   data () {
     return {
-      logoPlatzi,
-      url1: '#'
+      logoPlatzi
     }
   }
 }

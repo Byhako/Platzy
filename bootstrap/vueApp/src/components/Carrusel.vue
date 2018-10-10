@@ -16,8 +16,8 @@
                 h1 Platzi Conf Hawaii
                 p.d-none.d-md-block  Platzi Conf llega por primera vez a Hawaii! Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que estan creando el furuto de internet. Ven a conocerlos.
 
-                a.btn.btn-outline-light(href='') Quiero ser orador
-                button.button.btn.btn-platzi Comprar tickets
+                a.btn.btn-outline-light(href='#conviertete-en-orador' ) Quiero ser orador
+                button.button.btn.btn-platzi(data-toggle="modal" data-target="#ModalCompra") Comprar tickets
       
 </template>
 
