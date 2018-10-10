@@ -22,7 +22,7 @@
 
             .form-row
               .col.form-group
-                textarea.form-control.form-control.lg(name="text" placeholder="¿Sobre que deseas hablar?")
+                textarea.form-control.form-control-lg(name="text" placeholder="¿Sobre que deseas hablar?")
                 small.form-text.text-muted Recuerda incluir un título para tu charla.
 
             .form-row

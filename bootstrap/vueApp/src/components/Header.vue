@@ -4,6 +4,11 @@
       a.navbar-brand(href='#')
         img(:src="logoPlatzi" alt="logoPlatzi")
         span  Conf Hawaii
+
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar', aria-controls='navbar', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+
+
       
       #navbar.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
