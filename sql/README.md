@@ -67,6 +67,8 @@ En archivo /etc/mysql/my.cnf, agregar esta linea:
 
 Cada tabla se llama con el plural del sustativo que se usa.
 
+### **CREATE**
+
 ```
 CREATE TABLE IF NOT EXISTS books(
   book_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -113,3 +115,12 @@ CREATE TABLE IF NOT EXISTs operations(
 
 ```
 
+### **INSERT**
+
+INSERT INTO  tabla(columnas) VALUES(valores)
+
+```
+INSERT INTO authors(author_id, name, nationality) VALUES('', 'Juan Rulfo', 'MEX');
+INSERT INTO authors(name, nationality) VALUES('Gabo', 'COL');
+INSERT INTO authors VALUES('', 'Juan Gabriel Vazques', 'COL');
+```
