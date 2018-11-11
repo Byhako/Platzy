@@ -160,6 +160,27 @@ key = VALUES(key) -> actualiza el valor de key en la tabla con el que envio.
 ```
 #### **querys anidados**
 
+Supongamos un csv con:
+
+El laberinto de la soledad, Octavio Paz, 1952
+Vuelta al laberinto, Octavio Paz, 1960
+
+*Query a mano*
+INSERT INTO books(title, author_id) VALUES('El laberinto de la soledad', 6);
+
+INSERT INTO books(title, author_id, `year`)
+VALUES('Vuelta al laberinto',
+  (SELECT author_id FROM authors WHERE name = 'Octavio Paz' LIMIT 1), 1960
+);
+
+
+### **Cargar archivo sql desde terminal**
+
+sudo mysql -u root < all_schema.sql
+
+sudo mysql -u root -D pruebaplatzi < all_schema.sql
+
+
 
 
 
