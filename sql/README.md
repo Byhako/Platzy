@@ -1,4 +1,10 @@
 # Maria DB
+sudo service mysql start
+/etc/init.d/mysql start
+
+service mysqld stop
+/etc/init.d/mysqld stop
+
 
 En archivo /etc/mysql/my.cnf, agregar esta linea: 
 *socket        = /var/run/mysqld/mysqld.sock*
@@ -123,4 +129,48 @@ INSERT INTO  tabla(columnas) VALUES(valores)
 INSERT INTO authors(author_id, name, nationality) VALUES('', 'Juan Rulfo', 'MEX');
 INSERT INTO authors(name, nationality) VALUES('Gabo', 'COL');
 INSERT INTO authors VALUES('', 'Juan Gabriel Vazques', 'COL');
+
+INSERT INTO clientes(client_id, name, email, birthdate, gender, active) VALUES
+  (1,'Maria Dolores Gomez','Maria Dolores.95983222J@random.names','1971-06-06','F',1),
+  (2,'Adrian Fernandez','Adrian.55818851J@random.names','1970-04-09','M',1),
+  (3,'Maria Luisa Marin','Maria Luisa.83726282A@random.names','1957-07-30','F',1),
+  (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1);
+
+INSERT INTO clientes(client_id, name, email, birthdate, gender, active) VALUES
+  (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1)
+  ON DUPLICATE KEY IGNORE ALL;
+
+Existe pero nunca usar IGNORE ALL, porque si hay algun error lo ignora y continua con la ejecución.
+
+INSERT INTO clientes(client_id, name, email, birthdate, gender, active) VALUES
+  (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1)
+  ON DUPLICATE KEY UPDATE
+
+UPDATE -> si encuentras llave duplicada, actualiza el valor de la tabla con este nuevo.
+
+INSERT INTO clientes(client_id, name, email, birthdate, gender, active) VALUES
+  (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1)
+  ON DUPLICATE KEY UPDATE active = VALUES(active)
+
+UPDATE -> si encuentras llave duplicada, actualiza el valor de la tabla con este nuevo.
+key = VALUES(key) -> actualiza el valor de key en la tabla con el que envio.
+
+
+
+```
+#### **querys anidados**
+
+
+
+
+### **SELECT**
+
+```
+select * from clientes where client_id = 4;
+TIP:
+select * from clientes where client_id = 4\G
+
+presenta los datos de manera columna.
+
+
 ```
