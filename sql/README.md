@@ -181,9 +181,6 @@ sudo mysql -u root < all_schema.sql
 sudo mysql -u root -D pruebaplatzi < all_schema.sql
 
 
-
-
-
 ### **SELECT**
 
 ```
@@ -194,4 +191,16 @@ select * from clientes where client_id = 4\G
 presenta los datos de manera columna.
 
 
+SELECT name FROM clients WHERE gender = 'M' LIMIT 10;
+
+SELECT YEAR(birthdate) FROM clients;
+
+SELECT NOW();  ->  fecha actual del pc
+
+SELECT name, YEAR(NOW()) - YEAR(birthdate) FROM clients;
+
+SELECT name FROM clients WHERE name LIKE '%Saave%';
+
+SELECT name, email, YEAR(NOW()) - YEAR(birthdate) AS Edad , gender
+FROM clients WHERE gender = 'F' AND name LIKE '%Lop%';
 ```
