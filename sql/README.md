@@ -269,3 +269,34 @@ AND nationality NOT IS ('RUS')
 GROUP BY nationality
 ORDER BY c_authors DESC, nationality ASC;
 
+
++ ¿Cual es el promedio/desviacion estandar del precio de los libros?
+
+SELECT a.nationality, COUNT(book_id) AS libros, AVG(price) AS prom, STdDEV(price) AS std
+FROM books AS b
+JOIN authors AS a
+ON a.author_id = b.author_id
+GROUP BY a.nationality
+ORDER BY libros DESC
+
+
++ ¿Cual es el precio max/min de un libro?
+
+SELECT a.nationality, MAX(price), MIN(price)
+FROM books AS b
+JOIN authos AS a
+ON a.author_id = b.author_id
+GROUP BY nationality
+
++ Reporte final
+
+SELECT c.name, t.type, b.title,  
+CONCAT(a.name, ' (', a.nationality, ')' ) AS author,
+TO_DAYS(NOW()) - TO_DAYS(t.created_at) AS ago 
+FROM transactions AS t
+LEFT JOIN clients AS c
+ON c.client_id = t.client_id
+LEFT JOIN books as b
+ON  b.book_id = t.book_id
+LEFT JOIN authors As a
+ON b.author_id = a.author_id
