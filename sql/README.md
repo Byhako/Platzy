@@ -300,3 +300,20 @@ LEFT JOIN books as b
 ON  b.book_id = t.book_id
 LEFT JOIN authors As a
 ON b.author_id = a.author_id
+
+### **UPDATE Y DELETE**
+
+DELETE FROM authors WHERE author_id = 2 limit 1;
+
+UPDATE table
+SET [columna = valor]
+WHERE [condiciones]
+LIMIT 1;
+
+
+UPDATE clients
+SET active = 0
+WHERE client_id = 80
+LIMIT 1;
+
+TRUNCATE tabla -->  vacia contenido de la tabla.
