@@ -234,3 +234,38 @@ JOIN authors as a
 WHERE c.gender = 'F'
  and t.type IN  ('sell', 'lend');
 ```
+
+### **LEFT JOIN**
+
+Si un autor no tiene libros, aun asi lo muestra como NULL, el solo JOIN no muestra las "no coincidencias"
+
+```
+SELECT a.author_id, a.name, a.nationality, b.title, COUNT(b.book_id)
+FROM authors AS a
+LEFT JOIN books AS b
+ON b.author_id = a.author_id
+WHERE a.author_id BETWEEN 1 AND 5
+GROUP BY a.author_id
+ORDER BY a.author_id desc;
+
+```
+
+
+### CASOS
+
++ ¿Que nacionalidades hay?
+
+SELECT nationality FROM authors
+GROUP BY nationality;
+
+SELECT DISTINCT nationality FROM authors;
+
++ ¿Cuantos autores hay de cada nacionalidad?
+
+SELECT nationality, COUNT(author_id) AS c_authors
+FROM authors
+WHERE nationality IS NOT NULL
+AND nationality NOT IS ('RUS')
+GROUP BY nationality
+ORDER BY c_authors DESC, nationality ASC;
+
