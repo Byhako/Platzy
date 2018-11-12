@@ -203,4 +203,34 @@ SELECT name FROM clients WHERE name LIKE '%Saave%';
 
 SELECT name, email, YEAR(NOW()) - YEAR(birthdate) AS Edad , gender
 FROM clients WHERE gender = 'F' AND name LIKE '%Lop%';
+
+SELECT count(*) FROM books;
+
+
+SELECT * FROM authors WHERE author_id <=5;
+SELECT * FROM books WHERE author_id BETWEEN 1 AND 5;
+SELECT book_id, author_id, title FROM books WHERE author_id BETWEEN 1 AND 5;
+```
+
+### **JOIN**
+
+```
+SELECT b.book_id, a.name, b.title
+FROM books as  b
+JOIN authors as a
+  ON a.author_id = b.author_id
+WHERE a.author_id BETWEEN 1 AND 5;
+
+
+
+SELECT c.name, b.title, a.name, t.type
+FROM transactions AS t
+JOIN books AS b
+  ON t.book_id = b.book_id
+JOIN clients AS c
+  ON t.client_id = c.client_id
+JOIN authors as a
+  ON b.author_id = a.author_id
+WHERE c.gender = 'F'
+ and t.type IN  ('sell', 'lend');
 ```
