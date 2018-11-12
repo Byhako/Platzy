@@ -317,3 +317,28 @@ WHERE client_id = 80
 LIMIT 1;
 
 TRUNCATE tabla -->  vacia contenido de la tabla.
+
+
+SELECT COUNT(book_id), 
+SUM(IF(year < 1950, 1, 0)) AS '< 1950',
+SUM(IF(year >= 1950, 1, 0)) AS '> 1950'
+FROM books;
+
+SELECT nationality, COUNT(book_id), 
+SUM(IF(year < 1950, 1, 0)) AS "< 1950",
+SUM(IF(year >= 1950 and year < 1990, 1, 0)) AS "< 1990",
+SUM(IF(year >= 1990 and year < 2000, 1, 0)) AS "< 2000",
+SUM(IF(year >= 2000, 1, 0)) AS "< hoy"
+FROM books AS b
+JOIN authors AS a
+ON a.author_id = b.author_id
+WHERE a.nationality IS NOT NULL
+GROUP BY nationality;
+
+
+### Versionar el esquema de las tablas.
+
+
+mysqldump -u root -p -d pruebaplatzi > esquema.sql
+
+-d -->  sin datos, guarda solo el esquema.
