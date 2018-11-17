@@ -1,4 +1,4 @@
-import { arrayColors, arrayFruits } from '../arrays'
+import { arrayFruits, arrayColors } from '../arrays'
 
 describe('Comprobando existencia de elemento', () => {
   test('Contiene banana', () => {
@@ -9,5 +9,8 @@ describe('Comprobando existencia de elemento', () => {
   })
   test('Tamaño de array', () => {
     expect(arrayFruits()).toHaveLength(6)
+  })
+  test('Comprobando color', () => {
+    expect(arrayColors()).toContain('negro')
   })
 })
