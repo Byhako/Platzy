@@ -8,4 +8,7 @@ describe('Comprobar cadenas de texto', () => {
   test('No contiene feito', () => {
     expect(text).not.toMatch(/feito/)
   })
+  test('Tamaño de texto', () => {
+    expect(text).toHaveLength(15)
+  })
 })
