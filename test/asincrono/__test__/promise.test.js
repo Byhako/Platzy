@@ -8,4 +8,10 @@ describe('Probando promesas', () => {
       done()
     })
   })
+  test('Probamos resolve', () => {
+    return expect(Promise.resolve('Hola')).resolves.toBe('Hola')
+  })
+  test('Rechaza promesa', () => {
+    return expect(Promise.reject('Error')).rejects.toBe('Error')
+  })
 })
