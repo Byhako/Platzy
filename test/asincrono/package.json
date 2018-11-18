@@ -12,6 +12,7 @@
   "author": "Ruben e Acosta",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-jest": "^23.6.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
