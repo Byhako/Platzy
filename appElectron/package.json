@@ -1,0 +1,19 @@
+{
+  "name": "appElectron",
+  "version": "1.0.0",
+  "description": "Aplicación de electron para visualizar imagenes",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "electron"
+  ],
+  "author": "Ruben E Acosta",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^3.0.9"
+  }
+}
