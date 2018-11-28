@@ -1,14 +1,11 @@
 class Humano
   attr_accessor :name, :age, :genre
 
-  def greet
-    puts "hola, me llamo #{@name}"
+  def initialize(name, age, genre)
+    @name = name
+    @age = age
+    @genre = genre
   end
 end
 
-juan = Humano.new
-juan.name = "Juanito Perez"
-juan.age = 20
-juan.genre = "Masculino"
-
-puts juan.greet
+juan = Humano.new('Juan Perez', 15, 'Male')
