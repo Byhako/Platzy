@@ -152,6 +152,11 @@ GRANT curso TO contenedor;
 
 SET ROLE curso;
 
+CREATE DATABASE miBase TEMPLATE template1;
+
++ Para promover una base de datos a template:
+UPDATE pg_database SET datistemplate=true WHERE database 'miBase' 
+
 
 
 
