@@ -158,6 +158,16 @@ CREATE DATABASE miBase TEMPLATE template1;
 UPDATE pg_database SET datistemplate=true WHERE database 'miBase' 
 
 
+CREATE SCHEMA miSchema;
+
++ privilegios.
+
+GRANT privilegio TO role WITH GRANT OPTION
+GRANT ALL ON ALL TABLES IN SCHEMA miSchema TO curso;
+
+
+
+
 
 
 
