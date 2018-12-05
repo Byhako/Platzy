@@ -213,15 +213,89 @@ CREATE TABLE profiles_b (id SERIAL PRIMARY KEY, profile JSONB);
 
 INSERT INTO profiles_b (profile) VALUES ('{"name": "Nata", "tech": ["Biology", "Chemistry"]}');
 
+### Documentos no estructurados.
+
+CREATE EXTENSION hstore;
+
+CREATE TABLE hprofiles (idserial PRIMARY KEY, profile hstore);
+
+INSERT INTO hprofiles (profile) VALUES ('name=>Mario, ruby=>true, postgresql=>true');
+
+INSERT INTO hprofiles (profile) VALUES ('name=>Jedun, javascript=>true, nodejs=>true');
+
+SELECT * FROM hprofiles;  -- "name"=>"Mario", "ruby"=>"true", "postgresql"=>"true"
+SELECT profile->'name'ASname, profile->'ruby'as ruby FROM hprofiles;
+SELECT * FROM hprofiles WHERE (profile->'nodejs')::boolean;
+SELECT * FROM hprofiles WHERE (profile->'nodejs')::boolean = true;
+SELECT * FROM hprofiles WHERE profile @> 'nodejs=>true';
+
+-- Trae el registro si existe alguna llave especifica.
+
+SELECT * FROM hprofiles WHERE profile ? 'nodejs';
+
+-- Trae el registo si existen las llaves especificadas en el array (and &).
+
+SELECT * FROM hprofiles WHERE profile ?& ARRAY['ruby', 'postgresql'];
+
+-- Trae el registo si existen al menos las llaves especificadas en el array (or &).
+
+SELECT * FROM hprofiles WHERE profile ?| ARRAY['javascript', 'postgresql'];
+
+-- Añade una nueva llave-valor en los registros actuales.
+
+UPDATE hprofiles SET profile = profile || 'html5=>true'::hstore;
+
+-- Elimina del campo profile los que tengan llave 'go'.
+
+UPDATE hprofiles SET profile = delete(profile, 'go');
+
+-- En un arreglo de text[] obtiene solo las keys.
+
+SELECT akeys(profile) FROM hprofiles;  -- {name,ruby,html5,postgresql} ...
+
+-- Por registros independientes, obtiene solo las keys.
+
+SELECT DISTINCT skeys(profile) FROM hprofiles;
+
+-- Convierte de hstore a json.
+
+SELECT hstore_to_json(profile) FROM hprofiles;
+
+-- {"name": "Mario", "ruby": "true", "html5": "true", "postgresql": "true"}
 
 
 
+### Datos PostGIS
 
+-- Maneja datos geolocalización.
+-- Obtener la extension de postgis para trabajar con este tipo de campos.
 
+CREATE EXTENSION postgis;
 
+-- Point maneja la posicion X,Y.
 
+CREATE TABLE hospitales (idserial PRIMARY KEY, location geography, position geometry(POINT, 4326), nametext);
 
+INSERT INTO hospitales (name, location) VALUES ('Hospital Puerta de Hierro', ST_POINT(-6.3788, 53.2911));
 
+INSERT INTO hospitales (name, location) VALUES ('Hospital Conocido', ST_POINT(-7.3497, 53.5346));
 
+-- Mostrar la distancia de un punto determinado a los puntos que se encuentran actualmente.
 
+SELECT name, ST_DISTANCE(location, ST_POINT(-6.237009, 53.34115)::geography) FROM hospitales;
 
+-- Buscar un punto en un rango en particular.
+
+SELECT name FROM hospitales WHERE ST_DWithin(location, ST_POINT(-6.237009, 53.34115)::geography, 100000);
+
+-- Muestra los puntos x,y del campo numérico de location.
+
+SELECT name, st_astext(location) FROM hospitales;  -- POINT(X,Y)
+
+-- Genera la informacion en formato json
+
+SELECT name, st_asgeojson(location) FROM hospitales;  -- {"type": "Point", "coordinates": [-6.3788, 53.2911]}
+
+-- Genera la informacion en formato xml
+
+SELECT name, st_askml(location) FROM hospitales;
