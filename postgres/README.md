@@ -165,6 +165,27 @@ CREATE SCHEMA miSchema;
 GRANT privilegio TO role WITH GRANT OPTION
 GRANT ALL ON ALL TABLES IN SCHEMA miSchema TO curso;
 
++ Datos seriales.
+
+CREATE SEQUENCE ejemplo;
+SELECT NEXTVAL('ejemplo');
+
+valor actual:
+
+SELECT CURRVAL('ejemplo');
+
+Resetear secuencia (inicia en 5)
+
+SELECT SET('ejemplo', 5)
+
++ Tipos de datos.
+
+tipo char - longitud fija
+tipo varchar -tipo variable, toma unicamente el texto ingresado
+text - similar a varchar pero sin especificar el numero de caracteres, limit = 1GB
+
+SELECT SPLIT_PART('123-456-789', '-', 2) AS x;
+
 
 
 
