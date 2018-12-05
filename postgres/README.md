@@ -186,8 +186,32 @@ text - similar a varchar pero sin especificar el numero de caracteres, limit = 1
 
 SELECT SPLIT_PART('123-456-789', '-', 2) AS x;
 
+SELECT STRING_TO_ARRAY('aaa.bbb.ccc', '.') AS y;
 
++ rangos
 
+SELECT '(0,6)'::int8range;
+SELECT '[2018-04-01,2018-06-07]'::datarange;
+
+### Json
+
+CREATE TABLE profiles (id SERIAL PRIMARY KEY, profile JSON);
+
+INSERT INTO profiles (profile) VALUES ('{"name": "Mario", "tech": ["python", "ruby"]}');
+
+INSERT INTO profiles (profile) VALUES ('{"name": "Nata", "tech": ["Biology", "Chemistry"]}');
+
+SELECT JSON_EXTRACT_PATH_TEXT(profile, 'name') FROM profiles;
+
+SELECT JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH_TEXT(profile, 'tech')::json) FROM profiles;
+
+### Jsonb
+
+https://anthonysotolongo.wordpress.com/2015/04/13/jsonb-un-json-superior-en-postgresql/
+
+CREATE TABLE profiles_b (id SERIAL PRIMARY KEY, profile JSONB);
+
+INSERT INTO profiles_b (profile) VALUES ('{"name": "Nata", "tech": ["Biology", "Chemistry"]}');
 
 
 
