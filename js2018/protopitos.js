@@ -1,10 +1,18 @@
+function heredaDe (son, father) {
+  const fn = function () {}
+
+  fn.prototype = father.prototype
+  son.prototype = new fn
+  // claseHija.prototype.constructor = claseHija
+  son.prototype.constructor = son
+}
+
 // creemos un prototipo
 
 function Person (name, surname, tall) {
   this.name = name
   this.surname = surname
   this.tall = tall
-
 }
 
 Person.prototype.greet = function () {
@@ -28,3 +36,22 @@ ruben.greet()
 nata.greet()
 
 ruben.iTall()
+
+// Creamos un prototipo HIJO.
+
+function Development (name, surname) {
+  this.name = name
+  this.surname = surname
+}
+
+heredaDe(Development, Person)
+
+Development.prototype.greet = function () {
+  console.log(`Hello world, my name is ${this.name}`)
+}
+
+
+const ana = new Development('Anita', 'Perez')
+
+ana.greet()
+console.log('Ana es alta: ', ana.iTall())
