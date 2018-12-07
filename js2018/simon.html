@@ -86,6 +86,16 @@
       .hide {
         display: none;
       }
+
+      #container {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+      }
+      #nivel {
+        font-size: 34px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -96,6 +106,8 @@
       <div id="verde" class="color verde right" data-color="verde"></div>
       <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
     </div>
+
+    <div id="container"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
@@ -118,8 +130,10 @@
         }
 
         inicializar () {
-          this.elegirColor = this.elegirColor.bind(this)
+          document.getElementById('container').innerHTML = "<p id='nivel'>Nivel 1</p>"
           
+          this.elegirColor = this.elegirColor.bind(this)
+             
           this.toggleBtnEmpezar()
           this.nivel = 1
           this.colores = {
@@ -139,6 +153,8 @@
         }
 
         siguienteNivel () {
+          document.getElementById('container').innerHTML = "<p id='nivel'>Nivel " + this.nivel + "</p>"
+
           this.subnivel = 0
           this.iluminarSecuencia()
           this.agregarEventoclick()
@@ -222,6 +238,7 @@
         }
 
         gano () {
+          document.getElementById('container').innerHTML = "<p id='nivel'></p>"
           swal('Simon Dice','Felicitaciones, Ganaste.', 'success')
             .then(() => {
               this.inicializar()
@@ -230,6 +247,7 @@
 
 
         perdio () {
+          document.getElementById('container').innerHTML = "<p id='nivel'></p>"
           swal('Simon Dice','Que triste, Perdiste.', 'error')
             .then(() => {
               this.eliminarEventosClick()
