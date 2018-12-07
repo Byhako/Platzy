@@ -12,6 +12,10 @@
         height: 100vh;
       }
 
+      * {
+        font-family: sans-serif;
+      }
+
       .gameboard {
         height: 100vh;
         width: 100vh;
@@ -93,6 +97,8 @@
       <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
     <script>
       const celeste = document.getElementById('celeste')
       const violeta = document.getElementById('violeta')
@@ -100,6 +106,7 @@
       const verde = document.getElementById('verde')
       const btnEmpezar = document.getElementById('btnEmpezar')
       const ULTIMO_NIVEL = 10
+
       class Juego {
         constructor () {
           this.inicializar()
@@ -112,8 +119,8 @@
 
         inicializar () {
           this.elegirColor = this.elegirColor.bind(this)
-
-          btnEmpezar.classList.add('hide')
+          
+          this.toggleBtnEmpezar()
           this.nivel = 1
           this.colores = {
             celeste,
@@ -121,6 +128,10 @@
             naranja,
             verde
           }
+        }
+
+        toggleBtnEmpezar () {
+          btnEmpezar.classList.toggle('hide')          
         }
 
         generarSecuencia () {
@@ -200,14 +211,30 @@
               this.nivel++
               this.eliminarEventosClick
               if (this.nivel === (ULTIMO_NIVEL+1)) {
-                alert('GANO')
+                this.gano()
               } else {
                 setTimeout(() => this.siguienteNivel(), 2000)                
               }
             }
           } else {
-            alert('PERDIO')
+            this.perdio()
           }
+        }
+
+        gano () {
+          swal('Simon Dice','Felicitaciones, Ganaste.', 'success')
+            .then(() => {
+              this.inicializar()
+            })
+        }
+
+
+        perdio () {
+          swal('Simon Dice','Que triste, Perdiste.', 'error')
+            .then(() => {
+              this.eliminarEventosClick()
+              this.inicializar()
+            })
         }
       }
 
