@@ -88,3 +88,83 @@ union Busqueda = Amigo | Lugar | Evento | Pagina
 
 [string!]!
 
+# Herramientas
+
++ Aliases es una manera de ponerle un nombre a una consulta.
+
++ Los Fragments son una manera que nos permite GraphQL en las consultas de agrupar campos para poder utilizarlos de una manera conveniente para nuestra consulta.
+
+```
+{
+  curso(id: 1) {
+    ...CamposNecesarios
+  }
+  cursos {
+    ...CamposNecesarios
+  }
+}
+
+fragment CamposNecesarios on Curso {
+  titulo
+  descripcion
+}
+```
+
++ Inline Fragments
+
+```
+{
+  buscar(query: 'GraphQL'){
+    ... on Curso {
+      titulo
+    }
+    ... on Profesor {
+      nombre
+    }
+  }
+}
+```
+
++ Directives
+
+variable: 
+
+```
+{
+  "conDescripcion": true
+}
+```
+
+Consulta:
+
+```
+query Cursos($conDescripcion: Boolean!) {
+  Cursos {
+    titulo
+    description @include(if: $conDescripcion)
+  }
+}
+```
+
++ Mutations
+
+```
+mutation {
+  profesorAdd(nombre: 'Nata', genero: FEMENINO) {
+    id
+  }
+}
+```
+
++ Input Types
+
+```
+mutation {
+  profesorAdd(profesor: {
+    nombre: 'nata'
+    genero: FEMENINO
+  }) {
+    id
+  }
+}
+```
