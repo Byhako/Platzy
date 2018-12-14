@@ -30,3 +30,9 @@ Requisitos legales, formato 1A para las SEC. (60 días)
 Contabilidad en orden.
 Aplicar después de dos años de auditorías para ser una STO
 Pueden ser suspendidos, si hago cosas mal, a la carcel caigo.
+
+
+plaza imperial
+american express
+1.35%
+01 8000 942660  ext  21482  carolina guza barrera
