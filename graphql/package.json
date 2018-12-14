@@ -1,0 +1,19 @@
+{
+  "name": "poject_graphql",
+  "version": "1.0.0",
+  "description": "Platzi curse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben E Acosta",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "apollo-server-express": "^2.3.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3"
+  }
+}
