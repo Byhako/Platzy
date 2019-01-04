@@ -364,3 +364,43 @@ db.<coleccion>.createIndex({
 `
 Donde el tipo de índice puede ser 2dsphere o 2d.
 
+
+## Backup MongoDB
+
+MongoDB cuenta con mecanismos para gestionar el respaldo y la recuperación de los datos.
+
+*mongodump*: es una instrucción que se ejecuta desde la línea de comandos en la terminal y permite exportar todo el contenido de una base de datos de MongoDB en una estructura de archivos externos y portables que pueden ser luego restablecidos en el mismo o en otro servidor.
+
+*mongorestore*: es la instrucción que permite el restablecimiento de una base de datos de MongoDB a partir de los archivos generados con el comando mongodump.
+
+Para poder ejecutar cualquiera de las dos instrucciones asociadas con la exportación o importación de bases de datos debemos verificar primero que hemos instalado debidamente MongoDB y que el servidor mongod está corriendo en el sistema.
+
+La sintaxis de la instrucción que genera los archivos de respaldo es la siguiente:
+
+`
+mongodump --db <nombre de la base de datos>
+`
+
+Si no se especifica una carpeta destino en la que se han de generar los archivos de respaldo, los mismos serán creados en justo en la misma carpeta en la que hemos ejecutado la instrucción.
+
+Los archivos generados por mongodump son básicamente de dos tipos: .json y .bson, estos formados ya los hemos descrito y comentado en clases anteriores.
+
+Para recuperar la base de datos a partir de los archivos generados con mongodump ejecutamos la siguiente instrucción:
+
+`
+mongorestore --db <nombre de la base de datos> <ubicación de los archivos de respaldo>
+`
+
+
+## Seguridad y escalabilidad
+
+En cuanto a los aspectos de seguridad, MongoDB, al igual que otros manejadores de datos SQL y NoSQL, incorpora políticas y mecanismos de autenticación (verificar la identidad del usuario) y autorización (permisos de acceso) de usuarios; sin embargo, cuando trabajamos de manera local, en un entorno controlado, o mediante el uso de la interfaz gráfica Robomongo, también de forma local, estos mecanismos no son exigidos por el manejador. Ya al pasar a entornos de producción sí deberemos tomar en cuenta muy seriamente estos aspectos e implementar políticas de seguridad formales para evitar accesos no autorizados o maliciosos.
+
+En relación a la escalabilidad, MongoDB contempla la posibilidad de escalar de dos maneras, vertical y horizontalmente.
+
+El escalado Vertical se refiere al aumento de la capacidad de un solo servidor en cuando a memoria RAM, espacio de almacenamiento o características de la CPU, entre otras. La limitación en el escalado vertical estará dado por las mismas limitaciones físicas del hardware en el que se ejecute el servidor.
+
+El escalado Horizontal por otro lado, implica la distribución del conjunto de datos del sistema en distintos servidores. Esto permite solventar los problemas de la limitación de hardware ya que si quisiéramos crecer para adaptar nuestra base de datos a un mayor volumen de información, bastaría por incorporar al cluster de servidores, nuevos servidores e integrarlos a la estructura distribuida de los archivos de la base de datos, a este método de distribución se le llama Sharding o Fragmentación.
+
+La técnica de Sharding aporta varias ventajas al performance de MongoDB ya que de esta manera se disminuye la carga dtrabajo en un único servidor y técnicamente no habría limitación de espacio de almacenamiento, entre otras.
+
