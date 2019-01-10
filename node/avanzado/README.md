@@ -93,9 +93,16 @@ https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md
 + ava:  Para realizar pruebas unitarias.
 + defaults: para definir valores por defecto en los test
 + nyc: test coverage.  --reporter=lcov --> es para generar el reporte en html
+```
+"test": "DEBUG=verse:* nyc --reporter=lcov ava tests/ --verbose"
+```
+Test coverage es una técnica que nos permite ver si los test que se han creado están cubriendo la totalidad del código de nuestra aplicación. Nos informa mediante porcentaje que cantidad de codigo esta siendo cubierto con el set de pruebas definidas.
+
+Se agrega en el script de test en el package.json.
+
+
 + proxyquire:  Para sobre-escribir funciones de un modulo traido con require.
 + sinon: sinon.spy(), funcion especifica que permite hacerle preguntas, 
-Test coverage es una técnica que nos permite ver si los test que se han creado están cubriendo la totalidad del código de nuestra aplicación. Nos informa mediante porcentaje que cantidad de codigo esta siendo cubierto con el set de pruebas definidas.
 
 
 para que standar corrija solo los errores de lint corremos:
