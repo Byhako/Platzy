@@ -89,4 +89,5 @@ $ vagrant -v
 + nyc: test coverage.  --reporter=lcov --> es para generar el reporte en html
 + proxyquire:  Para sobre-escribir funciones de un modulo traido con require.
 + sinon: sinon.spy(), funcion especifica que permite hacerle preguntas, 
-Test coverage es una técnica que nos permite ver si los test que se han creado están cubriendo la totalidad del código de nuestra aplicación. Nos informa mediante porcentaje que cantidad de codigo esta siendo cubierto con el set de pruebas definidas. 
+Test coverage es una técnica que nos permite ver si los test que se han creado están cubriendo la totalidad del código de nuestra aplicación. Nos informa mediante porcentaje que cantidad de codigo esta siendo cubierto con el set de pruebas definidas.
+
