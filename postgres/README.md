@@ -124,6 +124,8 @@ GRANT ALL PRIVILEGES ON DATABASE nanotutoriales_website TO nanotutoriales;
 + Roles de inicio de sesion.
 + Roles de grupo
 
+listar los roles -> \du+
+
 CREATE ROLE curso LOGIN PASSWORD 'clave';
 SELECT * FROM pg_roles;
 DROP ROLE curso;

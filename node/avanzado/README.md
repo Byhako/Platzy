@@ -35,19 +35,20 @@ $ sudo service postgresql restart
 
 Para poder desarrollar este nanotutorial necesitamos tener disponible una sesión cliente en un servidor PostgreSQL. Para esto debemos iniciar el cliente con el siguiente comando:
 
-`
-psql -U postgres -h localhost -W
-`
+```
+$ psql -U postgres -h localhost -W
+contraseña usuario postgres:  clave
+```
 
 ### Crear usuario
 
 Para crear un usuario lo haremos con el siguiente comando:
 
-`
+```
 CREATE USER nanotutoriales PASSWORD 'password';
-`
+```
 
-_Creando un usiario y una base de datos_
+### Creando un rol y una base de datos
 ```
 postgres=# CREATE ROLE platzi WITH LOGIN PASSWORD 'platzi';
 CREATE ROLE
@@ -57,6 +58,9 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE verse TO platzi;
 GRANT
 postgres=#  \quit
 ```
+
+Listar dbs ->  \l
+Listar roles -> \du+
 ----------------------------------------------------------
 ## Ansible
 
@@ -91,6 +95,7 @@ $ vagrant -v
 + sinon: sinon.spy(), funcion especifica que permite hacerle preguntas, 
 Test coverage es una técnica que nos permite ver si los test que se han creado están cubriendo la totalidad del código de nuestra aplicación. Nos informa mediante porcentaje que cantidad de codigo esta siendo cubierto con el set de pruebas definidas.
 
-+ para que standar corrija solo los errores de lint corremos:
 
+para que standar corrija solo los errores de lint corremos:
 $ npm run lint -- --fix
+

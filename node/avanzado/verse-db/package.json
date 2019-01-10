@@ -4,6 +4,7 @@
   "description": "A simple IoT platform - DB Module",
   "main": "index.js",
   "scripts": {
+    "setup": "DEBUG=verse:* node setup.js",
     "lint": "standard"
   },
   "author": "Ruben E Acosta",
@@ -12,6 +13,7 @@
     "standard": "^12.0.1"
   },
   "dependencies": {
+    "debug": "^4.1.1",
     "pg": "^7.7.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0"
