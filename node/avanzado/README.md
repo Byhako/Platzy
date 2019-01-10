@@ -17,6 +17,7 @@ $ sudo service postgresql start
 Por razones de seguridad, Postgres no permite las conexiones remotas. Si deseas habilitarlas tienes que hacer lo siguiente:
 
 En el archivo de configuración pg_hba.conf, agrega (red de ejemplo):
+ /etc/postgresql/9.6/main/pg_hba.conf
 
 host all all 10.10.29.0/24 trust
 En el archivo de configuración postgresql.conf, tienes que usar:
@@ -61,6 +62,9 @@ postgres=#  \quit
 
 Listar dbs ->  \l
 Listar roles -> \du+
+
+$ DB_PASS='were' npm run setup
+
 ----------------------------------------------------------
 ## Ansible
 
@@ -75,12 +79,10 @@ $ ansible --version
 https://www.vagrantup.com/downloads.html
 $ vagrant -v
 
+## Ava
 
-
-
-
-+ Ava.js es un test runner que permite definir cada uno de los tests de nuestra app y soporta ECMAScript 
-  https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md
++ Ava.js es un test runner que permite definir cada uno de los tests de nuestra app y soporta ECMAScript.
+https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md
 
 
 
