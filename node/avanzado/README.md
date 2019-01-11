@@ -102,6 +102,7 @@ Se agrega en el script de test en el package.json.
 
 
 + proxyquire:  Para sobre-escribir funciones de un modulo traido con require.
+
 + sinon: sinon.spy(), funcion especifica que permite hacerle preguntas, 
 
 
