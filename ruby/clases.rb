@@ -52,3 +52,33 @@ bic.presentacion
 
 # Ruby tiene la palabra reservada "super”. Lo que hace super es obtener
 # todas las líneas de código que tiene el mismo método en una clase padre.
+
+# *************************************************************************
+# *************************************************************************
+# *************************************************************************
+
+class Persona
+  def initialize(name) # Constructor
+    @name = name # Variable de instancia
+  end
+
+  def name # Getter
+    @name
+  end
+
+  def name=(name) # Setter
+     @name = name
+     self
+  end
+end
+
+class Persona
+  attr_accessor(:name)  # Genera getter y setter
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+class Persona < Struct.new(:name) #Struct declara el constructor, getters y setters
+end

@@ -1,0 +1,30 @@
+{
+  "name": "verse-db",
+  "version": "1.0.0",
+  "description": "A simple IoT platform - DB Module",
+  "main": "index.js",
+  "scripts": {
+    "setup": "DEBUG=verse:* node setup.js",
+    "lint": "standard",
+    "test": "DEBUG=verse:* nyc --reporter=lcov ava tests/ --verbose"
+  },
+  "author": "Ruben E Acosta",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^1.0.1",
+    "nyc": "^13.1.0",
+    "proxyquire": "^2.1.0",
+    "sinon": "^7.2.2",
+    "sqlite3": "^4.0.4",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "defaults": "^1.0.3",
+    "inquirer": "^6.2.1",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0"
+  }
+}
