@@ -24,3 +24,6 @@ test/react/node_modules/
 graphql/node_modules/
 node/avanzado/verse-db/node_modules/
 node/avanzado/verse-db/packaga-lock.json
+angular/platzisquare/node_modules
+angular/platzisquare/package-lock.json
+
