@@ -1,0 +1,19 @@
+/*---------- $COLORS -----------*/
+table tr:hover {
+  background-color: #dbd879;
+}
+
+.btn {
+  display: inline-block;
+  color: white;
+  background-color: #ea83ee;
+  line-height: 2.5;
+  border-radius: 3px;
+  font-size: 24px;
+}
+.btn__icon {
+  font-size: 0.6em;
+}
+.btn--info {
+  background-color: #4268dd;
+}
